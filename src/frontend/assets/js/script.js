@@ -1,8 +1,9 @@
-document.querySelector("#test").addEventListener("click", function () {
-    document.querySelector("#another-test").innerHTML = "Ratio"
-})
+// document.querySelector("#test").addEventListener("click", function () {
+//     document.querySelector("#another-test").innerHTML = "Ratio"
+// })
 
 const url = "http://localhost:5501/"
+
 async function getAllItems() {
     try {
         let response = await fetch(url)
@@ -14,7 +15,19 @@ async function getAllItems() {
 async function logAllItems() {
     let data = await getAllItems();
     data.items.forEach(item => {
-        console.log(item)
+        let div = document.createElement("div")
+        div.classList.add("merch-item")
+        div.innerHTML = `
+        <div class="merch-img"></div>
+        <div class="merch-details">
+            <div class="title">${item[0].title}</div>
+            <div class="price">${item[0].price}€</div>
+            <div class="color-ctn"></div>
+        </div>`
+        item.forEach(variant => {
+            div.querySelector(".color-ctn").innerHTML += `<div class="color" style="background: ${variant.color.code};"></div>`
+        })
+        document.querySelector(".merch-item-ctn").appendChild(div)
     })
 }
 logAllItems()

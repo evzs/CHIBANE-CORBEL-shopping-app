@@ -8,7 +8,10 @@
                 "category": "Clothes",
                 "subcategory": "T-shirt",
                 "cat": "Teba",
-                "color": "purple",
+                "color": {
+                    "name": "lavender",
+                    "code": "#a4a4ff"
+                },
                 "available": true,
                 "sizes": "XS,S,M,L,XL,XXL",
                 "images": [
@@ -24,7 +27,10 @@
                 "category": "Clothes",
                 "subcategory": "T-shirt",
                 "cat": "Teba",
-                "color": "black",
+                "color": {
+                    "name": "black",
+                    "code": "#000000"
+                },
                 "available": true,
                 "sizes": "XS,S,M,L,XL,XXL",
                 "images": [
@@ -40,7 +46,50 @@
                 "category": "Clothes",
                 "subcategory": "T-shirt",
                 "cat": "Teba",
-                "color": "black",
+                "color": {
+                    "name": "green",
+                    "code": "#C1E1C1"
+                },
+                "available": true,
+                "sizes": "XS,S,M,L,XL,XXL",
+                "images": [
+                    "","",""
+                ],
+                "price": 25,
+                "reduction": 0
+            }
+        ],
+        [
+            {
+                "id": 3,
+                "title": "Le MitskTee",
+                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
+                "category": "Clothes",
+                "subcategory": "T-shirt",
+                "cat": "Teba",
+                "color": {
+                    "name": "lavender",
+                    "code": "#E6E6FA"
+                },
+                "available": true,
+                "sizes": "XS,S,M,L,XL,XXL",
+                "images": [
+                    "","",""
+                ], 
+                "price": 25,
+                "reduction": 0
+            },
+            {
+                "id": 5,
+                "title": "Le MitskTee",
+                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
+                "category": "Clothes",
+                "subcategory": "T-shirt",
+                "cat": "Teba",
+                "color": {
+                    "name":"white",
+                    "color": "#FFFFFF"
+                },
                 "available": true,
                 "sizes": "XS,S,M,L,XL,XXL",
                 "images": [

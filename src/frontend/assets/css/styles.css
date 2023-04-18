@@ -5,6 +5,7 @@
     --color-bg: #131313;
     --color-fg: #ececec;
 }
+
 html, body {
     height: 100vh;
     width: 100%;
@@ -22,4 +23,47 @@ main {
     width: fit-content;
     letter-spacing: 2px;
     margin-bottom: 10px;
+}
+
+.merch-item-ctn {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.merch-item {
+    width: 300px;
+    border: 2px solid rgba(128, 128, 128, 0.541)
+}
+.merch-details .title {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.merch-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 5px;
+}
+.merch-img{
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+.color-ctn {
+    display: flex;
+    gap: 5px;
+}
+.color {
+    height: 15px;
+    width: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.459);
+    border-radius: 50%;
+}
+.blue {
+    background-color: blue;
+}
+.purple {
+    background: purple;
 }
