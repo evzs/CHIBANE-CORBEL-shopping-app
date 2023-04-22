@@ -101,3 +101,20 @@ exports.getAllCategories = (req, res) => {
         categories
     })
 }
+
+exports.getItemsByVariant = (req, res) => {
+    const slug = req.params.slug.toLowerCase()
+    const result = data.items.filter(item => item.slug.toLowerCase() == slug)
+    if (!result) {
+        res.status(404).json(
+            {"title": "An error occurred",
+            "status": 404,
+            "message": "Items not found."}
+        )
+            return
+    }
+    res.status(200).json({
+    message: "All items found successfully",
+    items: result
+    })
+}

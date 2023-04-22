@@ -1,10 +1,10 @@
 let userCart = []
-const url = "http://localhost:5501/items"
+const url = "http://localhost:5501/"
 let data = await getAllItems();
 
 async function getAllItems() {
     try {
-        let response = await fetch(url)
+        let response = await fetch(url + "items/")
         return await response.json();
     } catch (error) {
         console.log(error)
@@ -56,7 +56,6 @@ function generateBaseItem(item) {
         </a>
         
     </div>`
-    console.log(div)
     parentDiv.appendChild(div)
 }
 
@@ -71,9 +70,6 @@ generateItems(data.items)
 let element = document.querySelector("form")
 element.addEventListener("submit", function (e) {
     e.preventDefault()
-    console.log(
-    element.querySelector(".item-data").value
-    )
     let table = element.querySelectorAll(".size-data")
     let size = Array.from(table).find(prout => prout.checked)
     !size ?
