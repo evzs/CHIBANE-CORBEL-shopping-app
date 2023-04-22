@@ -181,5 +181,40 @@
             "price": 15,
             "reduction": 0
         }
+    ], 
+    "categories": [
+        {
+            "id":0,
+            "name":"Clothes",
+            "subcategories": [
+                {
+                    "id": 0,
+                    "name": "T-shirts"
+                },
+                {   "id": 1,
+                    "name": "Sweatshirts"    
+                }
+            ]
+        },
+        {
+            "id":1,
+            "name":"Accessories",
+            "subcategories":[
+                {"id": 0,
+                "name": "Bucket Hats"},
+                {"id":1,
+                "name": "Caps"}
+            ]
+        },
+        {
+            "id": 2,
+            "name":"Others",
+            "subcategories":[
+                {"id":0,
+                "name":"Stickers"},
+                {"id":1,
+                "name":"Mugs"}
+            ]
+        }
     ]
 }
