@@ -1,16 +1,29 @@
 let userCart = []
 const url = "http://localhost:5501/"
-let data = await makeRequest("items/");
+let data;
 
-async function makeRequest(endURL) {
-    try {
-        let response = await fetch(url + endURL)
-        return await response.json();
-    } catch (error) {
-        console.log(error)
-    }
+// function makeRequest(endURL) {
+//     try {
+//         let response = fetch()
+//         return response.json();
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+function makeRequest(endURL="") {
+    fetch(url + endURL)
+        .then(response => {
+            return response.json()
+        })
+        .then(response => {
+            data = response
+            return response
+        })
+        .catch(error => {
+            console.log(`Error while fetching url: ${error}`)
+        })
 }
-
 function getAllSizes(item) {
     let newStr = "";
     Object.keys(item.sizes).forEach(latest => {
@@ -59,29 +72,34 @@ function generateBaseItem(item) {
     parentDiv.appendChild(div)
 }
 
-function generateItems(itemList) {
-    document.querySelector(".merch-item-ctn").innerHTML = "";
-    itemList.forEach(item => {
-        generateBaseItem(item)
-    })
+function generateItems(endURL = "") {
+    fetch(url + "items/" + endURL)
+        .then(response =>  response.json())
+        .then(response => {
+            data = response
+            document.querySelector(".merch-item-ctn").innerHTML = "";
+            data.items.forEach(item => {
+                generateBaseItem(item)
+            })
+            return response
+        })
+        .catch(error => {
+            console.log(`Error while fetching url: ${error}`)
+        })
 }
+generateItems()
 
-generateItems(data.items)
-
-let element = document.querySelector("form")
-element.addEventListener("submit", function (e) {
-    e.preventDefault()
-    let table = element.querySelectorAll(".size-data")
-    let size = Array.from(table).find(prout => prout.checked)
-    !size ?
-        console.log("invalid") : console.log(size.value)
-    
-})
-
-async function loadCategories() {
+function loadCategories() {
     let parentDiv = document.querySelector(".categories")
-    let data = await makeRequest("categories/")
-    if (!data || !data.categories) {
+
+        fetch(url + "categories/")
+        .then(response => {
+            return response.json()
+        })
+        .then(response => {
+            
+            data = response
+            if (!data || !data.categories) {
         return
     }
     
@@ -103,6 +121,11 @@ async function loadCategories() {
             catDiv.appendChild(subcat)
         }
         parentDiv.appendChild(catDiv)
+        })
+    return response
+    })
+    .catch(error => {
+        console.log(`Error while fetching url: ${error}`)
     })
 } 
 
@@ -134,18 +157,12 @@ function selectCategory(catTitle, subcatTitle = null) {
     )
 }
 
-async function updateItems(catID=-1, subcatID=-1) {
-    let data;
+function updateItems(catID=-1, subcatID=-1) {
     if (catID < 0) {
-        data = await makeRequest("items/");
+        generateItems()
     } else if (subcatID < 0) {
-        data = await makeRequest(`items/category/${catID}`)
+        generateItems(`category/${catID}`)
     } else {
-        data = await makeRequest(`items/category/${catID}/${subcatID}`)
+       generateItems(`category/${catID}/${subcatID}`)
     }
-    if (!data || !data.items) {
-        return
-    }
-    console.log(data)
-    generateItems(data.items)
 } 

@@ -4,14 +4,14 @@ const ratelimit = require("express-rate-limit")
 const app = express()
 const PORT = 5501
 
-const limiter = ratelimit({
-    windowMs: 1 * 60 * 1000,
-    max: 100,
-    standardHeaders: true,
-	legacyHeaders: false,
-})
+// const limiter = ratelimit({
+//     windowMs: 1 * 60 * 1000,
+//     max: 100,
+//     standardHeaders: true,
+// 	legacyHeaders: false,
+// })
 
-app.use(limiter)
+// app.use(limiter)
 
 app.use(cors({
     origin: "*"
