@@ -21,6 +21,10 @@ html, body {
 }
 main {
     padding: 25px;
+    display: flex;
+}
+aside {
+    width: 20%;
 }
 #test {
     padding: 10px;
@@ -175,4 +179,21 @@ main {
 }
 .size-block:hover label {
     font-weight: bold;
+}
+
+
+.cat-title:hover, .subcat-title:hover {
+    opacity: 1;
+}
+.cat-title, .subcat-title {
+    cursor: pointer;
+    opacity: .7;
+    transition: opacity .15s ease;
+}
+.subcategory-ctn {
+    padding-left: 10px;
+}
+.selected {
+    font-weight: bold;
+    opacity: 1;
 }

@@ -1,10 +1,10 @@
 let userCart = []
 const url = "http://localhost:5501/"
-let data = await getAllItems();
+let data = await makeRequest("items/");
 
-async function getAllItems() {
+async function makeRequest(endURL) {
     try {
-        let response = await fetch(url + "items/")
+        let response = await fetch(url + endURL)
         return await response.json();
     } catch (error) {
         console.log(error)
@@ -60,6 +60,7 @@ function generateBaseItem(item) {
 }
 
 function generateItems(itemList) {
+    document.querySelector(".merch-item-ctn").innerHTML = "";
     itemList.forEach(item => {
         generateBaseItem(item)
     })
@@ -76,3 +77,75 @@ element.addEventListener("submit", function (e) {
         console.log("invalid") : console.log(size.value)
     
 })
+
+async function loadCategories() {
+    let parentDiv = document.querySelector(".categories")
+    let data = await makeRequest("categories/")
+    if (!data || !data.categories) {
+        return
+    }
+    
+    document.querySelector(".show-all").addEventListener("click", function () {
+        updateItems()
+        selectCategory(this)
+    })
+
+    data.categories.forEach(category => {
+        let catDiv = document.createElement("div"); catDiv.classList.add("category-ctn")
+        let catTitle = document.createElement("div"); catTitle.classList.add("cat-title"); catTitle.innerHTML = `${category.name}`
+        catTitle.addEventListener("click", function () {
+            selectCategory(catTitle)
+            updateItems(category.id)
+        })
+        catDiv.appendChild(catTitle);
+        let subcat = generateSubCategories(category, catTitle)
+        if (subcat) {
+            catDiv.appendChild(subcat)
+        }
+        parentDiv.appendChild(catDiv)
+    })
+} 
+
+function generateSubCategories(category, parentDiv) {
+    if (!category.subcategories) {
+        return
+    }
+    let subCtn = document.createElement("div"); subCtn.classList.add("subcategory-ctn")
+    category.subcategories.forEach(subcategory => {
+        let subcatTitle = document.createElement("div"); subcatTitle.classList.add("cat-title"); subcatTitle.innerHTML = `${subcategory.name}`
+        subcatTitle.addEventListener("click", function () {
+            selectCategory(parentDiv, subcatTitle)
+            updateItems(category.id, subcategory.id)
+        })
+        subCtn.appendChild(subcatTitle)
+    })
+    return subCtn
+}
+
+loadCategories()
+
+function selectCategory(catTitle, subcatTitle = null) {
+    document.querySelectorAll(".cat-title,.subcat-title").forEach(div => {
+        div.classList.remove("selected")
+    })
+    catTitle.classList.add("selected")
+    if (subcatTitle) (
+        subcatTitle.classList.add("selected")
+    )
+}
+
+async function updateItems(catID=-1, subcatID=-1) {
+    let data;
+    if (catID < 0) {
+        data = await makeRequest("items/");
+    } else if (subcatID < 0) {
+        data = await makeRequest(`items/category/${catID}`)
+    } else {
+        data = await makeRequest(`items/category/${catID}/${subcatID}`)
+    }
+    if (!data || !data.items) {
+        return
+    }
+    console.log(data)
+    generateItems(data.items)
+} 

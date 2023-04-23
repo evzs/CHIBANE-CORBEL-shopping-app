@@ -6,7 +6,7 @@
             "slug": "le-teeba",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Clothes",
-            "subcategory": "T-shirt",
+            "subcategory": "T-shirts",
             "variant_ids":  [0, 1, 2],
             "cat": "Teba",
             "color": {
@@ -33,7 +33,7 @@
             "slug":"le-teeba",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Clothes",
-            "subcategory": "T-shirt",
+            "subcategory": "T-shirts",
             "variant_ids":  [0, 1, 2],
             "cat": "Teba",
             "color": {
@@ -60,7 +60,7 @@
             "slug": "le-teeba",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Clothes",
-            "subcategory": "T-shirt",
+            "subcategory": "T-shirts",
             "cat": "Teba",
             "variant_ids":  [0, 1, 2],
             "color": {
@@ -87,7 +87,7 @@
             "slug":"le-mitsktee",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Clothes",
-            "subcategory": "T-shirt",
+            "subcategory": "T-shirts",
             "variant_ids":  [3, 4],
             "cat": "Mitski",
             "color": {
@@ -114,7 +114,7 @@
             "slug":"le-mitsktee",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Clothes",
-            "subcategory": "T-shirt",
+            "subcategory": "T-shirts",
             "variant_ids":  [3, 4],
             "cat": "Mitski",
             "color": {
@@ -141,7 +141,7 @@
             "slug":"sticker-mitski",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Others",
-            "subcategory": "Sticker",
+            "subcategory": "Stickers",
             "variant_ids":  [],
             "cat": "Mitski",
             "color": {
@@ -164,7 +164,7 @@
             "slug":"bob-mochi",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Accessories",
-            "subcategory": "Bucket Hat",
+            "subcategory": "Bucket Hats",
             "variant_ids":  [],
             "cat": "Mochi",
             "color": {

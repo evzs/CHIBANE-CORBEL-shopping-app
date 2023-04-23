@@ -8,6 +8,6 @@ router.get("/categories", controller.getAllCategories)
 router.get("/item/:id", controller.getItemByID)
 router.get("/items/variant/:slug", controller.getItemsByVariant)
 router.get("/items/category/:catID", controller.getItemsByCategoryName)
-router.get("/items/category/:name/:subID", controller.getItemsBySubName)
+router.get("/items/category/:catID/:subID", controller.getItemsBySubName)
 
 module.exports = router
