@@ -26,7 +26,7 @@ exports.getItemByID = (req, res) => {
     }
     res.status(200).json({
         message: "Item found successfully.",
-        items: result
+        item: result
     })
 }
 

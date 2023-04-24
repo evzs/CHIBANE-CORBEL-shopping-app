@@ -129,7 +129,7 @@ function generateBaseItem(item, containerDiv) {
         <div class="name">${item.title}</div>
         <div class="price-see-more">
             ${generatePrice(item.price, item.reduction)}
-            <a href=""class="see-more">See more >></a>
+            <a href="article.html?articleID=${item.id}" target="_blank" class="see-more">See more >></a>
         </div>
     </div>`
     containerDiv.appendChild(itemDiv)
