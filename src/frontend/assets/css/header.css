@@ -1,0 +1,44 @@
+header {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background-color: var(--color-fg);
+    border-bottom: 2px solid #131313;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10;
+}
+nav {
+    width: 100%;
+    max-width: 1650px;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin: auto;
+}
+.nav-center a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.nav-center i {
+    font-size: 20px;
+}
+.nav-right {
+    font-size: 22px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+.cart {
+    cursor: pointer;
+}
+.logo {
+    position: relative;
+    top: 2px;
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}

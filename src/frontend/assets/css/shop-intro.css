@@ -1,0 +1,9 @@
+section.intro {
+    height: 500px;
+    width: 100%;
+    background-color: rgba(100, 148, 237, 0.247);
+}
+
+aside.categories {
+    width: 350px;
+}

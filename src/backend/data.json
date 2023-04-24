@@ -4,7 +4,7 @@
             "id": 0,
             "title": "Le Teeba",
             "slug": "le-teeba",
-            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
+            "description": "Introducing the Vans Bucket Hat with a twist! This stylish hat features an all-white design with embroidered flowers, adding a unique touch to your summer look. The high-quality materials used in its construction ensure both comfort and durability, making it perfect for all outdoor activities. The iconic Vans logo is also embroidered on the front, showcasing your love for the brand. With a relaxed fit and adjustable strap, this hat is suitable for all head sizes. Don't miss out on this must-have accessory for your summer wardrobe!",
             "category": "Clothes",
             "subcategory": "T-shirts",
             "variant_ids":  [0, 1, 2],
@@ -22,7 +22,7 @@
                 "XXL": true
             },
             "images": [
-                "","",""
+                "img/test/front.webp","img/test/back.webp"
             ], 
             "price": 25,
             "reduction": 0
@@ -49,10 +49,10 @@
                 "XXL": true
             },
             "images": [
-                "","",""
+                "img/test/front.webp","img/test/back.webp"
             ], 
             "price": 25,
-            "reduction": 0
+            "reduction": 15
         },
         {
             "id": 2,
@@ -76,7 +76,7 @@
                 "XXL": true
             },
             "images": [
-                "","",""
+                "img/test/front.webp","img/test/back.webp"
             ],
             "price": 25,
             "reduction": 0
@@ -103,7 +103,7 @@
                 "XXL": true
             },
             "images": [
-                "","",""
+                "img/test/front.webp","img/test/back.webp"
             ], 
             "price": 25,
             "reduction": 0
@@ -130,7 +130,7 @@
                 "XXL": true
             },
             "images": [
-                "","",""
+                "img/test/front.webp","img/test/back.webp"
             ], 
             "price": 25,
             "reduction": 0
@@ -153,7 +153,7 @@
                 "0": true
             },
             "images": [
-                "","",""
+                "img/test/front.webp","img/test/back.webp"
             ], 
             "price": 5,
             "reduction": 0
@@ -176,10 +176,10 @@
                 "0": true
             },
             "images": [
-                "","",""
+                "img/test/front.webp","img/test/back.webp"
             ], 
             "price": 15,
-            "reduction": 0
+            "reduction": 50
         }
     ], 
     "categories": [

@@ -92,35 +92,32 @@ generateItems()
 function loadCategories() {
     let parentDiv = document.querySelector(".categories")
 
-        fetch(url + "categories/")
-        .then(response => {
-            return response.json()
-        })
-        .then(response => {
-            
-            data = response
-            if (!data || !data.categories) {
-        return
+    fetch(url + "categories/")
+    .then(response => {
+        return response.json()
+    })
+    .then(response => {
+        
+        data = response
+        if (!data || !data.categories) {
+    return
     }
     
-    document.querySelector(".show-all").addEventListener("click", function () {
-        updateItems()
-        selectCategory(this)
-    })
+
 
     data.categories.forEach(category => {
-        let catDiv = document.createElement("div"); catDiv.classList.add("category-ctn")
+        let catCtn = document.createElement("div"); catCtn.classList.add("category-ctn")
         let catTitle = document.createElement("div"); catTitle.classList.add("cat-title"); catTitle.innerHTML = `${category.name}`
         catTitle.addEventListener("click", function () {
             selectCategory(catTitle)
             updateItems(category.id)
         })
-        catDiv.appendChild(catTitle);
+        catCtn.appendChild(catTitle);
         let subcat = generateSubCategories(category, catTitle)
         if (subcat) {
-            catDiv.appendChild(subcat)
+            catCtn.appendChild(subcat)
         }
-        parentDiv.appendChild(catDiv)
+        parentDiv.appendChild(catCtn)
         })
     return response
     })
@@ -129,20 +126,51 @@ function loadCategories() {
     })
 } 
 
+function generateCategories(categories) {
+    // Adds listener to the "Show all" link:
+    document.querySelector(".show-all").addEventListener("click", function () {
+        // selectCategory(this)
+        // updateItems()
+        console.log("all")
+    })
+
+    let container = document.querySelector(".categories")
+    if (!container || !categories) {
+        return
+    }
+
+    categories.forEach(category => {
+        let catCtn = document.createElement("div"); catCtn.classList.add("category-ctn")
+        let catTitle = document.createElement("div"); catTitle.classList.add("cat-title"); catTitle.innerHTML = `${category.name}`
+        catTitle.addEventListener("click", function () {
+            // selectCategory(catTitle)
+            // updateItems(category.id)
+            console.log("cat")
+        })
+        catCtn.appendChild(catTitle);
+        let subcatCtn = generateSubCategories(category, catTitle)
+        if (subcatCtn) {
+            catCtn.appendChild(subcatCtn)
+        }
+        parentDiv.appendChild(catCtn)
+    })
+}
+
 function generateSubCategories(category, parentDiv) {
     if (!category.subcategories) {
         return
     }
-    let subCtn = document.createElement("div"); subCtn.classList.add("subcategory-ctn")
+    let subcatCtn = document.createElement("div"); subcatCtn.classList.add("subcategory-ctn")
     category.subcategories.forEach(subcategory => {
         let subcatTitle = document.createElement("div"); subcatTitle.classList.add("cat-title"); subcatTitle.innerHTML = `${subcategory.name}`
         subcatTitle.addEventListener("click", function () {
-            selectCategory(parentDiv, subcatTitle)
-            updateItems(category.id, subcategory.id)
+            // selectCategory(parentDiv, subcatTitle)
+            // updateItems(category.id, subcategory.id)
+            console.log("subcat")
         })
-        subCtn.appendChild(subcatTitle)
+        subcatCtn.appendChild(subcatTitle)
     })
-    return subCtn
+    return subcatCtn
 }
 
 loadCategories()
@@ -159,10 +187,10 @@ function selectCategory(catTitle, subcatTitle = null) {
 
 function updateItems(catID=-1, subcatID=-1) {
     if (catID < 0) {
-        generateItems()
+        loadArticles()
     } else if (subcatID < 0) {
-        generateItems(`category/${catID}`)
+        loadArticles(`category/${catID}`)
     } else {
-       generateItems(`category/${catID}/${subcatID}`)
+       loadArticles(`category/${catID}/${subcatID}`)
     }
 } 
