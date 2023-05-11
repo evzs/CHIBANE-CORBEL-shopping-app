@@ -141,7 +141,7 @@ function generateBaseItem(item, container) {
     </div>
     <div class="article-info">
         <div class="brand">${item.brand}</div>
-        <div class="name">${item.title}</div>
+        <div class="name">${item.title} - ${item.color.category}</div>
         <div class="price-see-more">
             ${generatePrice(item)}
             <a href="article.html?articleID=${item.id}" target="_blank" class="see-more">See more >></a>
@@ -267,31 +267,29 @@ function applyFilters(items = [], filters = {}) {
     if (!Object.keys(filters) || !items) {
         return items
     }
-    switch (filters["sort-by"]) {
-        case "price-low":
-            items.sort((a, b) => {
-                return (a.price - (a.price * a.reduction /100)) - (b.price - (b.price * b.reduction /100))
-            })
-            break;
-        case "price-high":
-            items.sort((a, b) => {
+    let filterlist = filters["filter-list"]
+    items = items.filter(item => {
+        return itemHasCat(filterlist.brand, item) && itemHasColor(filterlist.color, item) && itemHasAvailableSize(filterlist.size, item)
+    })
+    // color, brand(cat), size
+    
+
+    
+    items.sort((a, b) => {
+        switch (filters["sort-by"]) {
+            case "price-low":
+                return (a.price - (a.price * a.reduction / 100)) - (b.price - (b.price * b.reduction / 100))
+            case "price-high":
                 return (b.price - (b.price * b.reduction / 100)) - (a.price - (a.price * a.reduction / 100))
-            })
-            break;
-        case "sale":
-            items.sort((a, b) => {
+            case "sale":
                 if (b - a == 0) {
                     return (b.price - (b.price * b.reduction / 100)) - (a.price - (a.price * a.reduction / 100))
                 }
                 return (b.reduction - a.reduction)
-            })
-            break;
-        case "default":
-            items.sort((a, b) => {
+            case "default":
                 return (b.id - a.id)
-            })
-            break;
-    }
+        }
+    });
     return items
 }
 
@@ -301,9 +299,25 @@ function retrieveFilters() {
     let sortValue = document.querySelector("input[name='sort-by']:checked").value;
     
     filters["sort-by"] = sortValue ? sortValue : "no-sort";
-    filters["filter-list"] = ALL_FILTERS.map(filter => {
-        temp = {};
-        return temp[filter] = Array.from(document.querySelectorAll(`input[name='${filter}']:checked`), e => e.value)
-    })
+    filters["filter-list"] = {
+        "color": Array.from(document.querySelectorAll(`input[name='color']:checked`), e => e.value),
+        "brand": Array.from(document.querySelectorAll(`input[name='brand']:checked`), e => e.value),
+        "size": Array.from(document.querySelectorAll(`input[name='size']:checked`), e => e.value)
+    }
     return filters
+}
+
+function itemHasColor(colors = [], item) {
+    return colors.length == 0 || colors.includes(item.color.category)
+}
+function itemHasCat(brand = [], item) {
+    console.log(brand, item.brand)
+    return brand.length == 0 || brand.includes(item.brand.toLowerCase())
+}
+function itemHasAvailableSize(sizes = [], item) {
+    return sizes.length == 0 || (
+        Array.from(Object.keys(item.sizes)).some(size => {
+            return item.sizes[size] && sizes.includes(size)
+        })
+    )
 }

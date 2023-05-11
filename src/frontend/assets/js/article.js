@@ -26,7 +26,3 @@ function loadArticle(id) {
     })
 }
 loadArticle(articleID)
-// let data = await getItemByID(articleID)
-// if (!data.item) {
-//   console.log("404 2")
-// }
