@@ -121,7 +121,7 @@ h1 {
 .article-img .reduction {
     padding-top: 1px;
     position: absolute;
-    right: -3px;
+    right: 0;
     top: 7%;
     height: 30px;
     width: 60px;
@@ -133,12 +133,13 @@ h1 {
     justify-content: center;
     font-size: 18px;
 }
-.article-item:hover .article-img .first{
+.article-img:hover .first{
     opacity: 0;
 }
 .price {
     margin-top: 5px;
     display: flex;
+    align-items: baseline;
     gap: 5px;
 }
 .article-info {
@@ -155,12 +156,12 @@ h1 {
     display: flex;
     justify-content: space-between;
 }
-.price .former {
+.total .former, .price .former {
     font-size: 15px;
     opacity: .7;
     text-decoration: line-through;
 }
-.price .new {
+.total .new, .price .new {
     color: rgb(214, 0, 28);
 }
 
@@ -179,5 +180,8 @@ h1 {
     right: 0;
 }
 .see-more:hover {
+    opacity: 1;
+}
+.article-item:hover .quick-cart {
     opacity: 1;
 }

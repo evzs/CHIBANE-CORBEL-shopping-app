@@ -1,5 +1,19 @@
 let cart = []
 
+function retrieveFromLocal() {
+    if (localStorage.getItem("cart") === null) {
+        return false
+    }
+    cart = JSON.parse(localStorage.getItem("cart"));
+    return true
+}
+function saveToLocal() {
+    localStorage.setItem("cart", JSON.stringify(cart))
+}
+retrieveFromLocal()
+
+
+
 
 const url = "http://localhost:5501/"
 let currentCategory = -1;
@@ -135,11 +149,15 @@ function generateArticles(items) {
 
 function generateBaseItem(item, container) {
     let itemDiv = document.createElement("div")
-    itemDiv.classList.add("article-item")
+    itemDiv.classList.add("article-item");
     itemDiv.innerHTML = `
     <div class="article-img">
         <img class="first" src="${url}${item.images[0]}">
         <img class="second" src="${url}${item.images[1]}">
+        <div class="quick-cart">
+            <div class="choose-size">Choose your size:</div>
+            <div class="sizes-container"></div>
+        </div>
         ${item.reduction ? '<div class="reduction">-'+item.reduction+'%</div>' : ''}
     </div>
     <div class="article-info">
@@ -149,10 +167,7 @@ function generateBaseItem(item, container) {
             ${generatePrice(item)}
             <a href="article.html?articleID=${item.id}" target="_blank" class="see-more">See more >></a>
         </div>
-        <div class="quick-cart">
-            <div class="choose-size">Choose your size:</div>
-            <div class="sizes-container"></div>
-        </div>
+
     </div>`
     generateQuickCart(item, itemDiv)
     container.appendChild(itemDiv)
@@ -191,9 +206,10 @@ function addToCart(item, size, quantity = 1) {
     let existing = cart.find(i => i.item_id == item.id && i.size == size)
     if (existing) {
         existing.quantity += quantity;
+        let existingDiv = document.querySelector(`[dataid='${item.id}'][datasize='${size}']`)
+        updateCartItemDiv(existingDiv, existing)
     } else {
-        console.log(item.title)
-        cart.push({
+        let newItem = {
             item_id: item.id,
             size: size,
             quantity: quantity,
@@ -205,9 +221,17 @@ function addToCart(item, size, quantity = 1) {
                 price: item.price,
                 reduction: item.reduction
             }
-        })
+        }
+        cart.push(newItem)
+        generateCartItem(newItem)
     }
+    saveToLocal()
     updateQuickCart()
+}
+
+function addToExistingCart(item, quantity = 1) {
+    item.quantity += quantity;
+    saveToLocal()
 }
 
 
@@ -283,12 +307,13 @@ function countAllChecked(checkboxes) {
 
 document.addEventListener("click", function(e) {
     let filters = document.querySelectorAll(".filter-options-container")
+    let quickCart = document.querySelector("aside")
     let $target = $(e.target)
 
     if ($target.parents(".filter-options-container").length > 0 
     || $target.hasClass("filter-options-container")
     || $target.parents(".filter-title.activable").length > 0 
-    || $target.hasClass("filter-title activable")){
+    || $target.hasClass("filter-title activable")) {
         return
     }
     removeClassFromAll(filters, "visible")
@@ -375,33 +400,123 @@ function itemHasAvailableSize(sizes = [], item) {
     )
 }
 
-function updateQuickCart() {
-    let container = document.querySelector("aside .cart-articles-ctn")
-    console.log(container)
-    container.innerHTML = "";
-    cart.forEach(element => {
-        container.innerHTML += `
-        <div class="cart-article-item">
-            <div class="left"><img src="${url}${element.item_info.image}"></div>
+function removeFromCart(item, quantity = 1) {
+    item.quantity = quantity < 0 ? 0 : item.quantity - quantity;
+    if (item.quantity <= 0) {
+        cart = cart.filter(element => element !== item)
+        saveToLocal()
+        return true
+    }
+    saveToLocal()
+    return false
+}
+
+function emptyCart() {
+    cart = []
+    saveToLocal()
+    updateQuickCart()    
+}
+
+function reloadCart() {
+    let parentdiv = document.querySelector("aside .cart-articles-ctn")
+    parentdiv.innerHTML = ""
+    cart.forEach(item => generateCartItem(item))
+}
+reloadCart()
+function generateCartItem(cartItem) {
+    if (!cartItem) {
+        return
+    }
+    let parentdiv = document.querySelector("aside .cart-articles-ctn")
+    if (cart.length == 1) {
+        parentdiv.innerHTML = ""
+    }
+    let container = document.createElement("div"); container.classList.add("cart-article-item");
+    container.innerHTML = `
+    <div class="cart-article-item" dataid='${cartItem.item_id}' datasize='${cartItem.size}'>
+            <div class="left"><img src="${url}${cartItem.item_info.image}"></div>
             <div class="right">
                 <div class="cart-item-header">
-                <span class="cart-item-title">${element.item_info.title}</span>
+                <span class="cart-item-title">${cartItem.item_info.title}</span>
                 <div class="bin-logo"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
-                <div class="cart-item-price">${element.item_info.price}€</div>
+                <div class="cart-item-price">${cartItem.item_info.price}€</div>
                 <div class="cart-item-info">
-                    <span class="info-size"><span>Size: </span>${element.size}</span>
-                    <span class="info-size"><span>Color: </span>${element.item_info.color}</span>
+                    <span class="info-size"><span>Size: </span>${cartItem.size}</span>
+                    <span class="info-size"><span>Color: </span>${cartItem.item_info.color}</span>
                 </div>
                 <div class="cart-item-quantity">
                     <span>Quantity: </span>
                     <div class="qty-select">
-                        <div class="add-item"><i class="fa-regular fa-square-minus"></i></div>
-                        <div class="qty">${element.quantity}</div>
-                        <div class="remove-item"><i class="fa-regular fa-square-plus"></i></div>
+                        <div class="remove-item"><i class="fa-regular fa-square-minus"></i></div>
+                        <div class="qty">${cartItem.quantity}</div>
+                        <div class="add-item"><i class="fa-regular fa-square-plus"></i></div>
                     </div>
             </div>
         </div>`
-    })
+        container.querySelector(".bin-logo").addEventListener("click", function () {
+            removeFromCart(cartItem, -1)
+            updateCartItemDiv(container, cartItem)
+        })
+        container.querySelector(".remove-item").addEventListener("click", function () {
+            removeFromCart(cartItem)
+            updateCartItemDiv(container, cartItem)
+        })
+        container.querySelector(".add-item").addEventListener("click", function () {
+            addToExistingCart(cartItem, 1)
+            updateCartItemDiv(container, cartItem)
+        })
+    parentdiv.appendChild(container);
+}
+
+function updateCartItemDiv(container, item) {
+    if (!container) {
+        return;
+    }
+    if (!item.quantity) {
+        container.remove();
+        updateQuickCart()
+        return;
+    }
+    container.querySelector(".qty").innerHTML = item.quantity;
+
+    updateQuickCart()
+}
+
+function updateQuickCart() {
+    let container = document.querySelector("aside .cart-articles-ctn")
+    if (cart.length == 0) {
+        container.innerHTML = `
+        <div class="empty">Le panier est vide !</div>`
+    }
+    updateCartPrice()
 }
 updateQuickCart()
+
+document.querySelector(".nav-link.cart").addEventListener("click", function() {
+    document.querySelector("aside").classList.toggle("visible")
+})
+
+// Removes the visible attribute when resizing over the max size of 
+// the burger menu.
+window.addEventListener("resize", function() {
+    document.querySelector("aside").classList.remove("visible")
+})
+
+
+function updateCartPrice() {
+    let fullPrice = 0;
+    let loweredPrice = 0;
+    cart.forEach(item => {
+        if (item.quantity < 0) {
+            return
+        }
+        fullPrice += item.quantity * item.item_info.price
+        loweredPrice += item.quantity * (item.item_info.price - (item.item_info.price * item.item_info.reduction / 100))
+    })
+
+    document.querySelector(".total").innerHTML = 
+        fullPrice != loweredPrice ?
+            `<span class="new">${addZeros(loweredPrice)}€</span><span class="former">${addZeros(fullPrice)}€</span>`
+            : `${addZeros(fullPrice)}€`
+}
