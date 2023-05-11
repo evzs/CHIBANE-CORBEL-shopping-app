@@ -20,7 +20,7 @@
                 "XXL": true
             },
             "images": [
-                "img/test/front.webp","img/test/back.webp"
+                "img/test/front.webp","img/test/back.webp", "img/test/person.png"
             ], 
             "price": 25,
             "reduction": 0
@@ -164,6 +164,27 @@
             "images": [
                 "img/test/front.webp","img/test/back.webp"
             ], 
+            "price": 15,
+            "reduction": 50
+        },
+        {
+            "id": 7,
+            "title": "Bob Mitski",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
+            "category": "Accessories",
+            "subcategory": "Bucket Hats",
+            "brand": "Mitski",
+            "color": {
+                "name": "Violet Pastel",
+                "category": "purple",
+                "code": "#b19cd9"
+            },
+            "sizes": {
+                "One Size": true
+            },
+            "images": [
+                "img/bob_violet_mitski.png","img/bob_violet_2.png", "img/bob_violet_3.png"
+            ],
             "price": 15,
             "reduction": 50
         }
