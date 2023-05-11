@@ -38,8 +38,8 @@
                 "code": "#000000"
             },
             "sizes": {
-                "XS": true,
-                "S": true,
+                "XS": false,
+                "S": false,
                 "M": true,
                 "XL": true,
                 "XXL": true
@@ -90,7 +90,7 @@
             "sizes": {
                 "XS": true,
                 "S": true,
-                "M": true,
+                "M": false,
                 "XL": true,
                 "XXL": true
             },

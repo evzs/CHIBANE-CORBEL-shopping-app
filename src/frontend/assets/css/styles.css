@@ -2,6 +2,7 @@
 @import url(shop-intro.css);
 @import url(articles.css);
 @import url(filters.css);
+@import url(quickcart.css);
 
 * {
     margin: 0;

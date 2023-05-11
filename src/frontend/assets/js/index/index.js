@@ -1,3 +1,6 @@
+let cart = []
+
+
 const url = "http://localhost:5501/"
 let currentCategory = -1;
 let currentSubCategory = -1;
@@ -146,8 +149,14 @@ function generateBaseItem(item, container) {
             ${generatePrice(item)}
             <a href="article.html?articleID=${item.id}" target="_blank" class="see-more">See more >></a>
         </div>
+        <div class="quick-cart">
+            <div class="choose-size">Choose your size:</div>
+            <div class="sizes-container"></div>
+        </div>
     </div>`
+    generateQuickCart(item, itemDiv)
     container.appendChild(itemDiv)
+    
 }
 
 function generatePrice(item) {
@@ -157,6 +166,50 @@ function generatePrice(item) {
 
 } 
 getArticles()
+
+function generateQuickCart(item, container) {
+    if (!container.querySelector(".sizes-container")) {
+        console.warn("no parent div?")
+    }
+    Array.from(Object.keys(item.sizes)).forEach(size => {
+        div = document.createElement("div");
+        div.innerHTML = size
+        if (item.sizes[size]) {
+            div.classList.add("size", "available");
+            div.addEventListener("click", function () {
+                addToCart(item, size)
+            })
+            
+        } else {
+            div.classList.add("size", "not-available");
+        }
+        container.querySelector(".sizes-container").appendChild(div)
+    })
+}
+
+function addToCart(item, size, quantity = 1) {
+    let existing = cart.find(i => i.item_id == item.id && i.size == size)
+    if (existing) {
+        existing.quantity += quantity;
+    } else {
+        console.log(item.title)
+        cart.push({
+            item_id: item.id,
+            size: size,
+            quantity: quantity,
+            item_info: {
+                id: item.id,
+                title: item.title,
+                image: item.images[0],
+                color: item.color.name,
+                price: item.price,
+                reduction: item.reduction
+            }
+        })
+    }
+    updateQuickCart()
+}
+
 
 function addZeros(number) {
     number = Number(number)
@@ -321,3 +374,34 @@ function itemHasAvailableSize(sizes = [], item) {
         })
     )
 }
+
+function updateQuickCart() {
+    let container = document.querySelector("aside .cart-articles-ctn")
+    console.log(container)
+    container.innerHTML = "";
+    cart.forEach(element => {
+        container.innerHTML += `
+        <div class="cart-article-item">
+            <div class="left"><img src="${url}${element.item_info.image}"></div>
+            <div class="right">
+                <div class="cart-item-header">
+                <span class="cart-item-title">${element.item_info.title}</span>
+                <div class="bin-logo"><i class="fa-solid fa-trash-can"></i></div>
+                </div>
+                <div class="cart-item-price">${element.item_info.price}€</div>
+                <div class="cart-item-info">
+                    <span class="info-size"><span>Size: </span>${element.size}</span>
+                    <span class="info-size"><span>Color: </span>${element.item_info.color}</span>
+                </div>
+                <div class="cart-item-quantity">
+                    <span>Quantity: </span>
+                    <div class="qty-select">
+                        <div class="add-item"><i class="fa-regular fa-square-minus"></i></div>
+                        <div class="qty">${element.quantity}</div>
+                        <div class="remove-item"><i class="fa-regular fa-square-plus"></i></div>
+                    </div>
+            </div>
+        </div>`
+    })
+}
+updateQuickCart()
