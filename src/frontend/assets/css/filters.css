@@ -7,9 +7,13 @@
 .filters-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
     margin: 0px 0 20px;
+}
+.filters-bar form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 /* ?LOWER PART: Filters */

@@ -41,6 +41,7 @@
                 <div class="shop-content-right">
                     <section class="section-search">
                         <div class="filters-bar">
+                            <form method="post" id="filters-form">
                                 <div class="filters">
                                     <!-- <label for="switch">
                                         <div class="filter-title mastermode"><span>Master Mode</span> <input name="mastermode"
@@ -55,12 +56,12 @@
                                         <div class="filter-options-container">
                                             <label for="color-1">
                                                 <div class="filter-option">
-                                                    <input type="checkbox" id="color-1" name="region" value="black"><span>Black</span>
+                                                    <input type="checkbox" id="color-1" name="color" value="black"><span>Black</span>
                                                 </div>
                                             </label>
                                             <label for="color-2">
                                                 <div class="filter-option">
-                                                    <input type="checkbox" id="color-2" name="region" value="white"><span>White</span>
+                                                    <input type="checkbox" id="color-2" name="color" value="white"><span>White</span>
                                                 </div>
                                             </label>
                                         </div>
@@ -74,17 +75,17 @@
                                         <div class="filter-options-container">
                                             <label for="cat-1">
                                                 <div class="filter-option">
-                                                    <input type="checkbox" id="cat-1" name="featured-cat" value="teba"><span>Teba</span>
+                                                    <input type="checkbox" id="cat-1" name="brand" value="teba"><span>Teba</span>
                                                 </div>
                                             </label>
                                             <label for="cat-2">
                                                 <div class="filter-option">
-                                                    <input type="checkbox" id="cat-2" name="featured-cat" value="mitski"><span>Mitski</span>
+                                                    <input type="checkbox" id="cat-2" name="brand" value="mitski"><span>Mitski</span>
                                                 </div>
                                             </label>
                                             <label for="cat-3">
                                                 <div class="filter-option">
-                                                    <input type="checkbox" id="cat-3" name="featured-cat" value="Mochi"><span>Mochi</span>
+                                                    <input type="checkbox" id="cat-3" name="brand" value="Mochi"><span>Mochi</span>
                                                 </div>
                                             </label>
                                         </div>
@@ -115,10 +116,6 @@
                                     </div>
                                 </div>
                                 <div class="sort">
-                                    <!-- <label for="switch">
-                                                                        <div class="filter-title mastermode"><span>Master Mode</span> <input name="mastermode"
-                                                                                type="checkbox" id="switch" /><label class="checkbox" for="switch"></label></div>
-                                                                    </label> -->
                                     <div class="filter-container">
                                         <div class="filter-title activable">
                                             <span>Sort by</span>
@@ -149,6 +146,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            </form>
                         </div>
 
                     <div class="articles-ctn">
@@ -186,6 +184,7 @@
         </section>
     </main>
     <footer></footer>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/index/filters.js"></script>
+    <script src="assets/js/index/index.js"></script>
 </body>
 </html>
