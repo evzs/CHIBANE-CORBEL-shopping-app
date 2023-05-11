@@ -3,12 +3,10 @@
         {
             "id": 0,
             "title": "Le Teeba",
-            "slug": "le-teeba",
             "description": "Introducing the Vans Bucket Hat with a twist! This stylish hat features an all-white design with embroidered flowers, adding a unique touch to your summer look. The high-quality materials used in its construction ensure both comfort and durability, making it perfect for all outdoor activities. The iconic Vans logo is also embroidered on the front, showcasing your love for the brand. With a relaxed fit and adjustable strap, this hat is suitable for all head sizes. Don't miss out on this must-have accessory for your summer wardrobe!",
             "category": "Clothes",
             "subcategory": "T-shirts",
-            "variant_ids":  [0, 1, 2],
-            "cat": "Teba",
+            "brand": "Teba",
             "color": {
                 "name": "Lavande",
                 "category":"purple",
@@ -30,12 +28,10 @@
         {
             "id": 1,
             "title": "Le Teeba",
-            "slug":"le-teeba",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Clothes",
             "subcategory": "T-shirts",
-            "variant_ids":  [0, 1, 2],
-            "cat": "Teba",
+            "brand": "Teba",
             "color": {
                 "name": "Noir",
                 "category": "black",
@@ -57,12 +53,10 @@
         {
             "id": 2,
             "title": "Le Teeba",
-            "slug": "le-teeba",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Clothes",
             "subcategory": "T-shirts",
-            "cat": "Teba",
-            "variant_ids":  [0, 1, 2],
+            "brand": "Teba",
             "color": {
                 "name": "Vert Pastel",
                 "category": "green",
@@ -84,12 +78,10 @@
         {
             "id": 3,
             "title": "Le Misktee",
-            "slug":"le-mitsktee",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Clothes",
             "subcategory": "T-shirts",
-            "variant_ids":  [3, 4],
-            "cat": "Mitski",
+            "brand": "Mitski",
             "color": {
                 "name": "Vert Pastel",
                 "category": "green",
@@ -111,12 +103,10 @@
         {
             "id": 4,
             "title": "Le Misktee",
-            "slug":"le-mitsktee",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Clothes",
             "subcategory": "T-shirts",
-            "variant_ids":  [3, 4],
-            "cat": "Mitski",
+            "brand": "Mitski",
             "color": {
                 "name": "Blanc",
                 "category": "white",
@@ -138,12 +128,10 @@
         {
             "id": 5,
             "title": "Sticker Mitski",
-            "slug":"sticker-mitski",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Others",
             "subcategory": "Stickers",
-            "variant_ids":  [],
-            "cat": "Mitski",
+            "brand": "Mitski",
             "color": {
                 "name": "Blanc",
                 "category": "white",
@@ -161,19 +149,17 @@
         {
             "id": 6,
             "title": "Bob Mochi",
-            "slug":"bob-mochi",
             "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
             "category": "Accessories",
             "subcategory": "Bucket Hats",
-            "variant_ids":  [],
-            "cat": "Mochi",
+            "brand": "Mochi",
             "color": {
                 "name": "Noir",
                 "category": "black",
                 "code": "#000000"
             },
             "sizes": {
-                "0": true
+                "One Size": true
             },
             "images": [
                 "img/test/front.webp","img/test/back.webp"

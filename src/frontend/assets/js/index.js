@@ -160,3 +160,68 @@ function updateItems(catID=-1, subcatID=-1) {
        loadArticles(`category/${catID}/${subcatID}`)
     }
 } 
+
+// ?SEARCH PAGE - Filters
+let filters = document.querySelectorAll(".filter-container")
+if (filters) {
+    filters.forEach((filter, index) => {
+        // Tracks the checkboxes
+        var allcheckboxes = filter.querySelectorAll("input[type='checkbox']")
+        if (allcheckboxes) {
+            allcheckboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", function() {
+                    let checkCount = countAllChecked(allcheckboxes)
+                    document.querySelectorAll(".count .number")[index].innerHTML = checkCount == 0 || checkCount == allcheckboxes.length ? "all" : checkCount
+                })
+            })
+        }
+
+        // Show or hide full filter menu
+        filter.querySelector(".filter-title").addEventListener("click", function() { 
+            if (filter.querySelector(".filter-options-container").classList.contains("visible")) {
+                filter.querySelector(".filter-options-container").classList.remove("visible")
+            } else {
+                removeClassFromAll(document.querySelectorAll(".filter-options-container"), "visible")
+                filter.querySelector(".filter-options-container").classList.add("visible")    
+            }
+        })
+    })
+}
+
+// Count all checkboxes checked in a array of checkboxes.
+function countAllChecked(checkboxes) {
+    if (!checkboxes) {
+        return 0
+    }
+    let total = 0
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            total++
+        }
+    })
+    return total
+}
+
+
+document.addEventListener("click", function(e) {
+    let filters = document.querySelectorAll(".filter-options-container")
+    let $target = $(e.target)
+
+    if ($target.parents(".filter-options-container").length > 0 
+    || $target.hasClass("filter-options-container")
+    || $target.parents(".filter-title.activable").length > 0 
+    || $target.hasClass("filter-title activable")){
+        return
+    }
+    
+    removeClassFromAll(filters, "visible")
+})
+
+function removeClassFromAll(divArr, className) {
+    if (divArr.length == 0) {
+        return
+    }
+    divArr.forEach(div => {
+        div.classList.remove(className)
+    })
+}

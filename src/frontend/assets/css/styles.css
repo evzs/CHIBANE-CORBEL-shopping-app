@@ -1,6 +1,7 @@
 @import url(header.css);
 @import url(shop-intro.css);
 @import url(articles.css);
+@import url(filters.css);
 
 * {
     margin: 0;
