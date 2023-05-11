@@ -5,16 +5,16 @@ let currentSubCategory = -1;
 
 function getCategories() {
     fetch(url + "categories/")
-    .then(response => response.json())
-    .then(response => {
-        if (!response || !response.categories) {
-            return
-        }
-        generateCategories(response.categories)
-        return response.categories
-    })
-    .catch(error => console.log(`Error while fetching url: ${error}`))
-} 
+        .then(response => response.json())
+        .then(response => {
+            if (!response || !response.categories) {
+                return
+            }
+            generateCategories(response.categories)
+            return response.categories
+        })
+        .catch(error => console.log(`Error while fetching url: ${error}`))
+}
 
 function selectCategory(catTitle, subcatTitle = null) {
     document.querySelectorAll(".cat-title,.subcat-title").forEach(div => {
@@ -53,10 +53,13 @@ function generateCategories(categories) {
     if (!container || !categories) {
         return
     }
-    
+
     categories.forEach(category => {
-        let catCtn = document.createElement("div"); catCtn.classList.add("category-ctn")
-        let catTitle = document.createElement("div"); catTitle.classList.add("cat-title"); catTitle.innerHTML = `${category.name}`
+        let catCtn = document.createElement("div");
+        catCtn.classList.add("category-ctn")
+        let catTitle = document.createElement("div");
+        catTitle.classList.add("cat-title");
+        catTitle.innerHTML = `${category.name}`
         catTitle.addEventListener("click", function () {
             currentCategory = category.id
             currentSubCategory = -1
@@ -77,9 +80,12 @@ function generateSubCategories(category, catContainer) {
     if (!category.subcategories) {
         return
     }
-    let subcatContainer = document.createElement("div"); subcatContainer.classList.add("subcat-ctn")
+    let subcatContainer = document.createElement("div");
+    subcatContainer.classList.add("subcat-ctn")
     category.subcategories.forEach(subcategory => {
-        let subcatTitle = document.createElement("div"); subcatTitle.classList.add("subcat-title"); subcatTitle.innerHTML = `${subcategory.name}`
+        let subcatTitle = document.createElement("div");
+        subcatTitle.classList.add("subcat-title");
+        subcatTitle.innerHTML = `${subcategory.name}`
         subcatTitle.addEventListener("click", function () {
             currentCategory = category.id
             currentSubCategory = subcategory.id
@@ -100,20 +106,20 @@ getCategories()
 
 function getArticles(endpoint = "", filters = {}) {
     fetch(url + `items/${endpoint}`)
-    .then(response => response.json())
-    .then(response => {
-        // VIDE?
-        if (!response || !response.items) {
-            return
-        } else if (!Object.keys(filters).length) {
-            generateArticles(response.items)
-        } else {
-            filteredItems = applyFilters(response.items, filters)
-            generateArticles(filteredItems)
-        } 
-        return response.items
-    })
-    .catch(error => console.log(`Error while fetching url: ${error}`))
+        .then(response => response.json())
+        .then(response => {
+            // VIDE?
+            if (!response || !response.items) {
+                return
+            } else if (!Object.keys(filters).length) {
+                generateArticles(response.items)
+            } else {
+                filteredItems = applyFilters(response.items, filters)
+                generateArticles(filteredItems)
+            }
+            return response.items
+        })
+        .catch(error => console.log(`Error while fetching url: ${error}`))
 }
 
 function generateArticles(items) {
@@ -127,7 +133,7 @@ function generateArticles(items) {
     } else {
         console.log("no items to show ?")
     }
-    
+
 }
 
 function generateBaseItem(item, container) {
@@ -152,10 +158,10 @@ function generateBaseItem(item, container) {
 
 function generatePrice(item) {
     return item.reduction ?
-        `<div class="price"><span class="new">${addZeros(item.price - (item.price * item.reduction /100))}€</span><span class="former">${addZeros(item.price)}€</span></div>`
-        : `<div class="price">${addZeros(item.price)}€</div>`
+        `<div class="price"><span class="new">${addZeros(item.price - (item.price * item.reduction /100))}€</span><span class="former">${addZeros(item.price)}€</span></div>` :
+        `<div class="price">${addZeros(item.price)}€</div>`
 
-} 
+}
 getArticles()
 
 function addZeros(number) {
@@ -163,7 +169,10 @@ function addZeros(number) {
     if (isNaN(number)) {
         return 0
     }
-    return number.toLocaleString("en",{useGrouping: false,minimumFractionDigits: 2});
+    return number.toLocaleString("en", {
+        useGrouping: false,
+        minimumFractionDigits: 2
+    });
 }
 
 function updateItems(catID = -1, subcatID = -1, filters = []) {
@@ -174,7 +183,7 @@ function updateItems(catID = -1, subcatID = -1, filters = []) {
     } else {
         getArticles(`category/${catID}/${subcatID}`, filters)
     }
-} 
+}
 
 function removeClassFromAll(divArr, className) {
     if (divArr.length == 0) {
@@ -195,7 +204,7 @@ if (filters) {
         var allcheckboxes = filter.querySelectorAll("input[type='checkbox']")
         if (allcheckboxes) {
             allcheckboxes.forEach(checkbox => {
-                checkbox.addEventListener("change", function() {
+                checkbox.addEventListener("change", function () {
                     let checkCount = countAllChecked(allcheckboxes)
                     document.querySelectorAll(".count .number")[index].innerHTML = checkCount == 0 || checkCount == allcheckboxes.length ? "all" : checkCount
                 })
@@ -203,12 +212,12 @@ if (filters) {
         }
 
         // Show or hide full filter menu
-        filter.querySelector(".filter-title").addEventListener("click", function() { 
+        filter.querySelector(".filter-title").addEventListener("click", function () {
             if (filter.querySelector(".filter-options-container").classList.contains("visible")) {
                 filter.querySelector(".filter-options-container").classList.remove("visible")
             } else {
                 removeClassFromAll(document.querySelectorAll(".filter-options-container"), "visible")
-                filter.querySelector(".filter-options-container").classList.add("visible")    
+                filter.querySelector(".filter-options-container").classList.add("visible")
             }
         })
     })
@@ -228,19 +237,18 @@ function countAllChecked(checkboxes) {
     return total
 }
 
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (e) {
     let filters = document.querySelectorAll(".filter-options-container")
     let $target = $(e.target)
 
-    if ($target.parents(".filter-options-container").length > 0 
-    || $target.hasClass("filter-options-container")
-    || $target.parents(".filter-title.activable").length > 0 
-    || $target.hasClass("filter-title activable")){
+    if ($target.parents(".filter-options-container").length > 0 ||
+        $target.hasClass("filter-options-container") ||
+        $target.parents(".filter-title.activable").length > 0 ||
+        $target.hasClass("filter-title activable")) {
         return
     }
     removeClassFromAll(filters, "visible")
 })
-
 
 
 let form = document.getElementById("filters-form")
@@ -254,15 +262,17 @@ if (form) {
 
 if (filtersInputs) {
     filtersInputs.forEach(input => {
-        input.addEventListener("change", function() {
+        input.addEventListener("change", function () {
             updateItems(currentCategory, currentSubCategory, retrieveFilters())
         })
     })
 }
+
 function unsetFilters() {
     document.querySelectorAll("input[type='checkbox']").forEach(input => input.checked = false)
     document.querySelectorAll(".count .number").forEach(element => element.innerHTML = "all")
 }
+
 function applyFilters(items = [], filters = {}) {
     if (!Object.keys(filters) || !items) {
         return items
@@ -270,7 +280,7 @@ function applyFilters(items = [], filters = {}) {
     switch (filters["sort-by"]) {
         case "price-low":
             items.sort((a, b) => {
-                return (a.price - (a.price * a.reduction /100)) - (b.price - (b.price * b.reduction /100))
+                return (a.price - (a.price * a.reduction / 100)) - (b.price - (b.price * b.reduction / 100))
             })
             break;
         case "price-high":
@@ -297,9 +307,12 @@ function applyFilters(items = [], filters = {}) {
 
 
 function retrieveFilters() {
-    let filters = { "filter-list": [], "sort-by": [] }
+    let filters = {
+        "filter-list": [],
+        "sort-by": []
+    }
     let sortValue = document.querySelector("input[name='sort-by']:checked").value;
-    
+
     filters["sort-by"] = sortValue ? sortValue : "no-sort";
     filters["filter-list"] = ALL_FILTERS.map(filter => {
         temp = {};

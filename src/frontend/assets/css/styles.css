@@ -2,7 +2,7 @@
 @import url(shop-intro.css);
 @import url(articles.css);
 @import url(filters.css);
-@import url(slider.css);
+@import url(detail.css);
 
 * {
     margin: 0;

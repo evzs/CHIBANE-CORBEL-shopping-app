@@ -19,10 +19,10 @@ exports.getItemByID = (req, res) => {
     if (!result) {
         res.status(404).json(
             {"title": "An error occurred",
-            "status": 404,
-            "message": "Item not found."}
+                "status": 404,
+                "message": "Item not found."}
         )
-            return
+        return
     }
     res.status(200).json({
         message: "Item found successfully.",
@@ -37,14 +37,14 @@ exports.getItemsByCategoryName = (req, res) => {
         const result = data.items.filter(item => item.category == category.name)
 
         res.status(200).json({
-        message: "All items found successfully",
-        items: result
+            message: "All items found successfully",
+            items: result
         })
     } catch {
         res.status(404).json(
             {"title": "An error occurred",
-            "status": 404,
-            "message": "Items not found."}
+                "status": 404,
+                "message": "Items not found."}
         )
         return
     }
@@ -55,22 +55,22 @@ exports.getItemsBySubName = (req, res) => {
         const subID = parseInt(req.params.subID)
 
         const category = data.categories.find(item => item.id == catID)
-       
+
         const subcategory = category.subcategories[subID]
-    
+
         const result = data.items.filter(item => {
             return item.category == category.name && item.subcategory == subcategory.name
         })
 
         res.status(200).json({
-        message: "All items found successfully",
-        items: result
+            message: "All items found successfully",
+            items: result
         })
     } catch {
         res.status(404).json(
             {"title": "An error occurred",
-            "status": 404,
-            "message": "Items not found."}
+                "status": 404,
+                "message": "Items not found."}
         )
         return
     }
@@ -118,13 +118,13 @@ exports.getItemsByVariant = (req, res) => {
     if (!result) {
         res.status(404).json(
             {"title": "An error occurred",
-            "status": 404,
-            "message": "Items not found."}
+                "status": 404,
+                "message": "Items not found."}
         )
-            return
+        return
     }
     res.status(200).json({
-    message: "All items found successfully",
-    items: result
+        message: "All items found successfully",
+        items: result
     })
 }
