@@ -41,6 +41,7 @@
     width: 50%;
     height: 100%;
     gap: 10px;
+    position: relative;
 }
 
 .swiper_thumbnail .swiper-wrapper {
@@ -229,6 +230,7 @@ button {
 }
 .quantity-ctn i {
     font-size: 30px;
+    cursor: pointer;
 }
 
 .sizes-ctn {

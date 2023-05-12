@@ -41,6 +41,7 @@ function generateArticle(item) {
     articleDiv.className = "article";
     articleDiv.innerHTML = `
       <div class="swiper-container">
+      ${item.reduction ? '<div class="reduction">-'+item.reduction+'%</div>' : ''}
             <div class="swiper swiper_main">
                 <div class="swiper-wrapper">
                     ${generateSwiperSlides(item.images)}
@@ -62,21 +63,12 @@ function generateArticle(item) {
             <div class="sizes">Sizes: ${generateSizeOptions(item.sizes)}</div>
 
             <div class="article-cart-ctn"></div>
-
-            <!-- TODO: Size selection -->
-
-            <!-- TODO: Add to cart -->
-
-            <!-- TODO: Quantity picking -->
-            ${item.reduction ? '<div class="singlepage-reduction">-'+item.reduction+'%</div>' : ''}
             <div class="description short" data-full-description="${item.description}">
                 <div class="description-decoration">DESCRIPTION</div>
                 <div class="display-decoration">>> Show more... <<</div>
                 <span class="description-text">${truncateDescription(item.description, 150)}</span>
             </div>
             </div>
-        <!-- TODO: Fake star reviews placeholder (maybe)-->
-        <!-- TODO: Fake favorite placeholder (maybe)-->
     `;
 
     generateCartForm(item, articleDiv.querySelector(".article-cart-ctn"))
