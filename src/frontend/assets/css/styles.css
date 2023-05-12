@@ -42,6 +42,17 @@ section:not(.intro) {
     margin: 0 auto;
 }
 
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro img {
+    height: 500px;
+    width: auto;
+    object-fit: cover;
+
 .not-found {
     height: 100%;
     width: 100%;
@@ -57,4 +68,3 @@ section:not(.intro) {
     display: flex;
     justify-content: center;
     align-items: center;
-}

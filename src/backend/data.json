@@ -25,7 +25,7 @@
                 "img/tshirt_black_3_teba.png"
             ],
             "price":30,
-            "reduction":15
+            "reduction":0
         },
         {
             "id":1,
@@ -291,7 +291,7 @@
                 "img/buckethat_black_3.png"
             ],
             "price":25,
-            "reduction":0
+            "reduction":30
         },
         {
             "id":11,
@@ -314,7 +314,7 @@
                 "img/buckethat_purple_3.png"
             ],
             "price":25,
-            "reduction":0
+            "reduction":30
         },
         {
             "id":12,
@@ -337,7 +337,7 @@
                 "img/buckethat_black_3.png"
             ],
             "price":25,
-            "reduction":0
+            "reduction":30
         },
         {
             "id":13,
@@ -360,7 +360,7 @@
                 "img/buckethat_purple_3.png"
             ],
             "price":25,
-            "reduction":0
+            "reduction":30
         },
         {
             "id":14,
@@ -383,7 +383,7 @@
                 "img/buckethat_black_3.png"
             ],
             "price":25,
-            "reduction":0
+            "reduction":30
         },
         {
             "id":15,
@@ -406,7 +406,7 @@
                 "img/buckethat_purple_3.png"
             ],
             "price":25,
-            "reduction":0
+            "reduction":30
         },
         {
             "id":16,
@@ -428,8 +428,8 @@
                 "img/cap_blue_2.png",
                 "img/cap_blue_3.png"
             ],
-            "price":25,
-            "reduction":0
+            "price":35,
+            "reduction":30
         },
         {
             "id":17,
@@ -451,8 +451,8 @@
                 "img/cap_black_2.png",
                 "img/cap_black_3.png"
             ],
-            "price":25,
-            "reduction":0
+            "price":35,
+            "reduction":30
         },
         {
             "id":18,
@@ -474,8 +474,8 @@
                 "img/cap_red_2.png",
                 "img/cap_red_3.png"
             ],
-            "price":25,
-            "reduction":0
+            "price":35,
+            "reduction":30
         },
         {
             "id":19,
@@ -562,9 +562,9 @@
                 "One Size":true
             },
             "images":[
-                "img/mug_teba_1.png",
-                "img/mug_teba_2.png",
-                "img/mug_teba_3.png"
+                "img/mug_1_teba.png",
+                "img/mug_2_teba.png",
+                "img/mug_3_teba.png"
             ],
             "price":13,
             "reduction":0
@@ -585,9 +585,9 @@
                 "One Size":true
             },
             "images":[
-                "img/mug_mochi_1.png",
-                "img/mug_mochi_2.png",
-                "img/mug_mochi_3.png"
+                "img/mug_1_mochi.png",
+                "img/mug_2_mochi.png",
+                "img/mug_3_mochi.png"
             ],
             "price":13,
             "reduction":0
@@ -608,9 +608,9 @@
                 "One Size":true
             },
             "images":[
-                "img/mug_mitski_1.png",
-                "img/mug_mitski_2.png",
-                "img/mug_mitski_3.png"
+                "img/mug_1_mitski.png",
+                "img/mug_2_mitski.png",
+                "img/mug_3_mitski.png"
             ],
             "price":13,
             "reduction":0
