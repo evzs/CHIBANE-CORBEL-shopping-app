@@ -193,10 +193,11 @@ button {
 .description .info {
     display: flex;
     gap: 5px;
+    align-items: center;
 }
 .description .title {
     font-weight: bold;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .article-cart-ctn {

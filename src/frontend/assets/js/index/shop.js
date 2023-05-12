@@ -54,7 +54,7 @@ function generateBaseItem(item, container) {
         <div class="article-name">${item.title} - ${item.color.name}</div>
         <div class="price-see-more">
             <div class="price">${generatePrice(item)}</div>
-            <a href="article.html?articleID=${item.id}" target="_blank" class="see-more">See more >></a>
+            <a href="article.html?articleID=${item.id}" class="see-more">See more >></a>
         </div>
 
     </div>`

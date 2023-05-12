@@ -203,18 +203,24 @@ window.addEventListener("resize", function() {
 function updateCartPrice() {
     let fullPrice = 0;
     let loweredPrice = 0;
+    let qty = 0
     cart.forEach(item => {
         if (item.quantity < 0) {
             return
         }
         fullPrice += item.quantity * item.item_info.price
         loweredPrice += item.quantity * (item.item_info.price - (item.item_info.price * item.item_info.reduction / 100))
+        qty += item.quantity
     })
 
     document.querySelector(".total").innerHTML = 
         fullPrice != loweredPrice ?
             `<span class="new">${addZeros(loweredPrice)}€</span><span class="former">${addZeros(fullPrice)}€</span>`
             : `${addZeros(fullPrice)}€`
+    document.querySelector(".count").innerHTML = qty
+    qty > 0 ?
+        document.querySelector(".item-count").classList.add("visible") :
+        document.querySelector(".item-count").classList.remove("visible")
 }
 
 function generateCartItemPrice(cartItem) {
