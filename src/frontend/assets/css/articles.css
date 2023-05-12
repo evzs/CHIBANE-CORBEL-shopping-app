@@ -66,6 +66,11 @@ h1 {
     gap: 15px;
     width: 100%;
 }
+.articles-ctn.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .shop-content-left {
     width: 300px;

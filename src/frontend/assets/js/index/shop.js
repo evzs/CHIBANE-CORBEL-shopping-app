@@ -6,9 +6,9 @@ function getArticles(endpoint = "", filters = {}) {
     fetch(URL + `items/${endpoint}`)
         .then(response => response.json())
         .then(response => {
+            console.log("here")
             // VIDE?
             if (!response || !response.items) {
-                console.log(empty)
             } else if (!Object.keys(filters).length) {
                 generateArticles(response.items)
             } else {
@@ -22,22 +22,27 @@ function getArticles(endpoint = "", filters = {}) {
 
 // Function generating the HTML code for the article display on the main page.
 function generateArticles(items) {
+    
     let container = document.querySelector(".articles-ctn")
     if (!container) {
         console.log("here")
         return
     }
+    
     container.innerHTML = "";
-    if (items) {
+    if (items.length) {
         items.forEach(item => generateBaseItem(item, container))
+        container.classList.remove("empty")
     } else {
-        console.log("rien")
+        container.classList.add("empty")
+        container.innerHTML = `<div class="no-result">There's nothing to show !</div>`;
     }
 
 }
 
 // Sub-function to `generateArticles`, generating the HTML code for a single article block.
 function generateBaseItem(item, container) {
+    
     let itemDiv = document.createElement("div")
     itemDiv.classList.add("article-item");
     itemDiv.innerHTML = `
@@ -70,6 +75,7 @@ getArticles()
 
 
 function updateItems(catID = -1, subcatID = -1, filters = []) {
+    
     if (catID < 0) {
         getArticles("", filters)
     } else if (subcatID < 0) {
