@@ -1,5 +1,3 @@
-//! MAIN PAGE SCRIPT: ARTICLES
-
 // Retrieves the articles from a given API endpoint, apply filters if necessary
 // and launches the HTML generating functions.
 function getArticles(endpoint = "", filters = {}) {
@@ -21,7 +19,6 @@ function getArticles(endpoint = "", filters = {}) {
 
 // Function generating the HTML code for the article display on the main page.
 function generateArticles(items) {
-    
     let container = document.querySelector(".articles-ctn")
     if (!container) {
         return
@@ -70,7 +67,7 @@ function generateBaseItem(item, container) {
 }
 getArticles()
 
-
+// Updates the items based on the current category and subcategory.
 function updateItems(catID = -1, subcatID = -1, filters = []) {
     
     if (catID < 0) {
@@ -82,6 +79,7 @@ function updateItems(catID = -1, subcatID = -1, filters = []) {
     }
 }
 
+// Generates the option to quick add the item to the cart on the main page.
 function generateQuickAdd(item, container) {
     if (!container.querySelector(".sizes-container")) {
         return
