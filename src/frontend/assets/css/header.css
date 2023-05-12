@@ -18,29 +18,64 @@ nav {
     align-items: center;
     margin: auto;
 }
+
 .nav-center a {
     display: flex;
     align-items: center;
     gap: 5px;
 }
+
 .main-logo i {
     font-size: .7em;
     position: relative;
     top: -3px;
 }
+
 .nav-right {
     font-size: 22px;
     display: flex;
     gap: 20px;
     justify-content: flex-end;
 }
+
 .cart {
     cursor: pointer;
+    position: relative;
 }
+
 .main-logo {
     position: relative;
     top: 2px;
     font-size: 30px !important;
     font-family: 'Josefin Sans', sans-serif;
     cursor: pointer;
+}
+
+.nav-link.cart .item-count {
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    bottom: -2px;
+    right: -8px;
+    height: 15px;
+    min-width: 15px;
+    border-radius: 5px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 0 3px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.item-count .count {
+    position: relative;
+    top: 1px;
+}
+
+.item-count.visible {
+    opacity: 1 !important;
+    pointer-events: all;
 }

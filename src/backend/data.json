@@ -1,205 +1,633 @@
 {
-    "items": [
+    "items":[
         {
-            "id": 0,
-            "title": "Le Teeba",
-            "description": "Introducing the Vans Bucket Hat with a twist! This stylish hat features an all-white design with embroidered flowers, adding a unique touch to your summer look. The high-quality materials used in its construction ensure both comfort and durability, making it perfect for all outdoor activities. The iconic Vans logo is also embroidered on the front, showcasing your love for the brand. With a relaxed fit and adjustable strap, this hat is suitable for all head sizes. Don't miss out on this must-have accessory for your summer wardrobe!",
-            "category": "Clothes",
-            "subcategory": "T-shirts",
-            "brand": "Teba",
-            "color": {
-                "name": "Lavande",
-                "category":"purple",
-                "code": "#a4a4ff"
+            "id":0,
+            "title":"Le Teeba",
+            "description":"Express your feline adoration with our fabulous Teeba! Made from soft, high-quality fabric, this tee ensures both comfort and style. Featuring an adorable Teba design, it proudly showcases your love for our furry friends. Available in black, this versatile t-shirt is a perfect addition to your wardrobe. Whether you're relaxing at home or going out with friends, our T-Shirt is the ideal choice to express your passion for cats. Pair it effortlessly with your favorite jeans or shorts for a casual yet trendy look. Complete your fan merch collection with our delightful T-Shirt today and let the world know about your favorite cat!",
+            "category":"Clothes",
+            "subcategory":"T-shirts",
+            "brand":"Teba",
+            "color":{
+                "name":"Black",
+                "category":"Black",
+                "code":"#000000"
             },
-            "sizes": {
-                "XS": true,
-                "S": true,
-                "M": true,
-                "XL": true,
-                "XXL": true
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
             },
-            "images": [
-                "img/test/front.webp","img/test/back.webp", "img/test/person.png"
-            ], 
-            "price": 25,
-            "reduction": 0
-        },
-        {
-            "id": 1,
-            "title": "Le Teeba",
-            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
-            "category": "Clothes",
-            "subcategory": "T-shirts",
-            "brand": "Teba",
-            "color": {
-                "name": "Noir",
-                "category": "black",
-                "code": "#000000"
-            },
-            "sizes": {
-                "XS": false,
-                "S": false,
-                "M": true,
-                "XL": true,
-                "XXL": true
-            },
-            "images": [
-                "img/test/front.webp","img/test/back.webp"
-            ], 
-            "price": 25,
-            "reduction": 15
-        },
-        {
-            "id": 2,
-            "title": "Le Teeba",
-            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
-            "category": "Clothes",
-            "subcategory": "T-shirts",
-            "brand": "Teba",
-            "color": {
-                "name": "Vert Pastel",
-                "category": "green",
-                "code": "#88e388"
-            },
-            "sizes": {
-                "XS": true,
-                "S": true,
-                "M": true,
-                "XL": true,
-                "XXL": true
-            },
-            "images": [
-                "img/test/front.webp","img/test/back.webp"
+            "images":[
+                "img/tshirt_black_1_teba.png",
+                "img/tshirt_black_2_teba.png",
+                "img/tshirt_black_3_teba.png"
             ],
-            "price": 25,
-            "reduction": 0
+            "price":30,
+            "reduction":0
         },
         {
-            "id": 3,
-            "title": "Le Misktee",
-            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
-            "category": "Clothes",
-            "subcategory": "T-shirts",
-            "brand": "Mitski",
-            "color": {
-                "name": "Vert Pastel",
-                "category": "green",
-                "code": "#88e388"
+            "id":1,
+            "title":"Le Teeba",
+            "description":"Express your feline adoration with our fabulous Teeba! Made from soft, high-quality fabric, this tee ensures both comfort and style. Featuring an adorable Teba design, it proudly showcases your love for our furry friends. Available in a vibrant teal, this versatile t-shirt is a perfect addition to your wardrobe. Whether you're relaxing at home or going out with friends, our T-Shirt is the ideal choice to express your passion for cats. Pair it effortlessly with your favorite jeans or shorts for a casual yet trendy look. Complete your fan merch collection with our delightful T-Shirt today and let the world know about your favorite cat!",
+            "category":"Clothes",
+            "subcategory":"T-shirts",
+            "brand":"Teba",
+            "color":{
+                "name":"Teal",
+                "category":"Blue",
+                "code":"#008080"
             },
-            "sizes": {
-                "XS": true,
-                "S": true,
-                "M": false,
-                "XL": true,
-                "XXL": true
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
             },
-            "images": [
-                "img/test/front.webp","img/test/back.webp"
-            ], 
-            "price": 25,
-            "reduction": 0
-        },
-        {
-            "id": 4,
-            "title": "Le Misktee",
-            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
-            "category": "Clothes",
-            "subcategory": "T-shirts",
-            "brand": "Mitski",
-            "color": {
-                "name": "Blanc",
-                "category": "white",
-                "code": "#ffffff"
-            },
-            "sizes": {
-                "XS": true,
-                "S": true,
-                "M": true,
-                "XL": true,
-                "XXL": true
-            },
-            "images": [
-                "img/test/front.webp","img/test/back.webp"
-            ], 
-            "price": 25,
-            "reduction": 0
-        },
-        {
-            "id": 5,
-            "title": "Sticker Mitski",
-            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
-            "category": "Others",
-            "subcategory": "Stickers",
-            "brand": "Mitski",
-            "color": {
-                "name": "Blanc",
-                "category": "white",
-                "code": "#ffffff"
-            },
-            "sizes": {
-                "One Size": true
-            },
-            "images": [
-                "img/test/front.webp","img/test/back.webp"
-            ], 
-            "price": 5,
-            "reduction": 0
-        },
-        {
-            "id": 6,
-            "title": "Bob Mochi",
-            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam atque aliquid, similique repudiandae, delectus dolore veniam reprehenderit unde aperiam dolorum optio repellat tempora molestias vitae quod dolorem quae odio ducimus!",
-            "category": "Accessories",
-            "subcategory": "Bucket Hats",
-            "brand": "Mochi",
-            "color": {
-                "name": "Noir",
-                "category": "black",
-                "code": "#000000"
-            },
-            "sizes": {
-                "One Size": true
-            },
-            "images": [
-                "img/test/front.webp","img/test/back.webp"
-            ], 
-            "price": 15,
-            "reduction": 50
-        },
-        {
-            "id": 7,
-            "title": "Bob Mitski",
-            "description": "Découvrez le bob Mitski Cat, un article de merchandising incontournable pour les fans de notre adorable chat grincheux. Ce couvre-chef à la mode est fabriqué avec soin à partir de matériaux de haute qualité, offrant un confort optimal et une durabilité remarquable. Arborant une broderie délicate représentant notre chat Mitski avec son expression boudeuse caractéristique, ce bob est un véritable hommage à sa personnalité unique. Que vous le portiez en ville ou lors de vos sorties en plein air, le bob Mitski Cat vous procurera style, élégance et une touche d'humour. Affichez fièrement votre amour pour notre adorable chat avec ce bob unique en son genre,  ajoutant une note de complicité et de bonne humeur à votre look quotidien.",
-            "category": "Accessories",
-            "subcategory": "Bucket Hats",
-            "brand": "Mitski",
-            "color": {
-                "name": "Violet Pastel",
-                "category": "purple",
-                "code": "#b19cd9"
-            },
-            "sizes": {
-                "One Size": true
-            },
-            "images": [
-                "img/bob_violet_mitski.png","img/bob_violet_2.png", "img/bob_violet_3.png"
+            "images":[
+                "img/tshirt_blue_1_teba.png",
+                "img/tshirt_blue_2_teba.png",
+                "img/tshirt_blue_3_teba.png"
             ],
-            "price": 15,
-            "reduction": 50
+            "price":30,
+            "reduction":0
+        },
+        {
+            "id":2,
+            "title":"Le Mitsktee",
+            "description":"Express your feline adoration with our fabulous Mitsktee! Made from soft, high-quality fabric, this tee ensures both comfort and style. Featuring an adorable Mitski design, it proudly showcases your love for our furry friends. Available in a soft lavender color, this versatile t-shirt is a perfect addition to your wardrobe. Whether you're relaxing at home or going out with friends, our T-Shirt is the ideal choice to express your passion for cats. Pair it effortlessly with your favorite jeans or shorts for a casual yet trendy look. Complete your fan merch collection with our delightful T-Shirt today and let the world know about your favorite cat!",
+            "category":"Clothes",
+            "subcategory":"T-shirts",
+            "brand":"Mitski",
+            "color":{
+                "name":"Lavender",
+                "category":"Purple",
+                "code":"#d9d0e5"
+            },
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
+            },
+            "images":[
+                "img/tshirt_purple_1_mitski.png",
+                "img/tshirt_purple_2_mitski.png",
+                "img/tshirt_purple_3_mitski.png"
+            ],
+            "price":25,
+            "reduction":0
+        },
+        {
+            "id":3,
+            "title":"Le Mochtee",
+            "description":"Express your feline adoration with our fabulous Mochtee! Made from soft, high-quality fabric, this tee ensures both comfort and style. Featuring an adorable Mochi design, it proudly showcases your love for our furry friends. Available in black, this versatile t-shirt is a perfect addition to your wardrobe. Whether you're relaxing at home or going out with friends, our T-Shirt is the ideal choice to express your passion for cats. Pair it effortlessly with your favorite jeans or shorts for a casual yet trendy look. Complete your fan merch collection with our delightful T-Shirt today and let the world know about your favorite cat!",
+            "category":"Clothes",
+            "subcategory":"T-shirts",
+            "brand":"Mochi",
+            "color":{
+                "name":"Black",
+                "category":"Black",
+                "code":"#000000"
+            },
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
+            },
+            "images":[
+                "img/tshirt_black_1_mochi.png",
+                "img/tshirt_black_2_mochi.png",
+                "img/tshirt_black_3_mochi.png"
+            ],
+            "price":25,
+            "reduction":0
+        },
+        {
+            "id":4,
+            "title":"Teba Sweatshirt",
+            "description":"Cozy up in style with our must-have Teba Sweatshirt, designed for all cat lovers! Crafted from premium, soft fabric, this sweatshirt ensures warmth and comfort during chilly days. Its adorable design proudly displays your affection for your favorite cat. Available in the pure White color, it adds a touch of personality to your wardrobe. Whether you're lounging at home or exploring the town, our Sweatshirt is the purr-fect choice for a casual yet fashionable look. With its relaxed fit and durable construction, this sweatshirt is perfect for everyday wear. Complete your fan merch collection and embrace your adoration for Teba today!",
+            "category":"Clothes",
+            "subcategory":"Sweatshirts",
+            "brand":"Teba",
+            "color":{
+                "name":"White",
+                "category":"White",
+                "code":"#FFFFFF"
+            },
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
+            },
+            "images":[
+                "img/sweatshirt_White_1_teba.png",
+                "img/sweatshirt_White_2_teba.png",
+                "img/sweatshirt_White_3_teba.png"
+            ],
+            "price":45,
+            "reduction":0
+        },
+        {
+            "id":5,
+            "title":"Teba Sweatshirt",
+            "description":"Cozy up in style with our must-have Teba Sweatshirt, designed for all cat lovers! Crafted from premium, soft fabric, this sweatshirt ensures warmth and comfort during chilly days. Its adorable design proudly displays your affection for your favorite cat. Available in black, it adds a touch of personality to your wardrobe. Whether you're lounging at home or exploring the town, our Sweatshirt is the purr-fect choice for a casual yet fashionable look. With its relaxed fit and durable construction, this sweatshirt is perfect for everyday wear. Complete your fan merch collection and embrace your adoration for Teba today!\n",
+            "category":"Clothes",
+            "subcategory":"Sweatshirts",
+            "brand":"Teba",
+            "color":{
+                "name":"Black",
+                "category":"Black",
+                "code":"#000000"
+            },
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
+            },
+            "images":[
+                "img/sweatshirt_black_1_teba.png",
+                "img/sweatshirt_black_2_teba.png",
+                "img/sweatshirt_black_3_teba.png"
+            ],
+            "price":45,
+            "reduction":0
+        },
+        {
+            "id":6,
+            "title":"Mochi Sweatshirt",
+            "description":"Cozy up in style with our must-have Mochi Sweatshirt, designed for all cat lovers! Crafted from premium, soft fabric, this sweatshirt ensures warmth and comfort during chilly days. Its adorable design proudly displays your affection for your favorite cat. Available in the magnificent cobalt color, it adds a touch of personality to your wardrobe. Whether you're lounging at home or exploring the town, our Sweatshirt is the purr-fect choice for a casual yet fashionable look. With its relaxed fit and durable construction, this sweatshirt is perfect for everyday wear. Complete your fan merch collection and embrace your adoration for Mochi today!",
+            "category":"Clothes",
+            "subcategory":"Sweatshirts",
+            "brand":"Mochi",
+            "color":{
+                "name":"Cobalt",
+                "category":"Blue",
+                "code":"#1338BE"
+            },
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
+            },
+            "images":[
+                "img/sweatshirt_blue_1_mochi.png",
+                "img/sweatshirt_blue_2_mochi.png",
+                "img/sweatshirt_blue_3_mochi.png"
+            ],
+            "price":45,
+            "reduction":0
+        },
+        {
+            "id":7,
+            "title":"Mochi Sweatshirt",
+            "description":"Cozy up in style with our must-have Mochi Sweatshirt, designed for all cat lovers! Crafted from premium, soft fabric, this sweatshirt ensures warmth and comfort during chilly days. Its adorable design proudly displays your affection for your favorite cat. Available in black, it adds a touch of personality to your wardrobe. Whether you're lounging at home or exploring the town, our Sweatshirt is the purr-fect choice for a casual yet fashionable look. With its relaxed fit and durable construction, this sweatshirt is perfect for everyday wear. Complete your fan merch collection and embrace your adoration for Mochi today!\n",
+            "category":"Clothes",
+            "subcategory":"Sweatshirts",
+            "brand":"Mochi",
+            "color":{
+                "name":"Black",
+                "category":"Black",
+                "code":"#000000"
+            },
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
+            },
+            "images":[
+                "img/sweatshirt_black_1_mochi.png",
+                "img/sweatshirt_black_2_mochi.png",
+                "img/sweatshirt_black_3_mochi.png"
+            ],
+            "price":45,
+            "reduction":0
+        },
+        {
+            "id":8,
+            "title":"Mitski Sweatshirt",
+            "description":"Cozy up in style with our must-have Mitski Sweatshirt, designed for all cat lovers! Crafted from premium, soft fabric, this sweatshirt ensures warmth and comfort during chilly days. Its adorable design proudly displays your affection for your favorite cat. Available in the soft lavender color, it adds a touch of personality to your wardrobe. Whether you're lounging at home or exploring the town, our Sweatshirt is the purr-fect choice for a casual yet fashionable look. With its relaxed fit and durable construction, this sweatshirt is perfect for everyday wear. Complete your fan merch collection and embrace your adoration for Mitski today!\n",
+            "category":"Clothes",
+            "subcategory":"Sweatshirts",
+            "brand":"Mitski",
+            "color":{
+                "name":"Lavender",
+                "category":"Purple",
+                "code":"#d9d0e5"
+            },
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
+            },
+            "images":[
+                "img/sweatshirt_purple_1_mitski.png",
+                "img/sweatshirt_purple_2_mitski.png",
+                "img/sweatshirt_purple_3_mitski.png"
+            ],
+            "price":45,
+            "reduction":0
+        },
+        {
+            "id":9,
+            "title":"Mitski Sweatshirt",
+            "description":"Cozy up in style with our must-have Mitski Sweatshirt, designed for all cat lovers! Crafted from premium, soft fabric, this sweatshirt ensures warmth and comfort during chilly days. Its adorable design proudly displays your affection for your favorite cat. Available in black, it adds a touch of personality to your wardrobe. Whether you're lounging at home or exploring the town, our Sweatshirt is the purr-fect choice for a casual yet fashionable look. With its relaxed fit and durable construction, this sweatshirt is perfect for everyday wear. Complete your fan merch collection and embrace your adoration for Mitski today!",
+            "category":"Clothes",
+            "subcategory":"Sweatshirts",
+            "brand":"Mitski",
+            "color":{
+                "name":"Black",
+                "category":"Black",
+                "code":"#000000"
+            },
+            "sizes":{
+                "XS":true,
+                "S":true,
+                "M":true,
+                "XL":true,
+                "XXL":true
+            },
+            "images":[
+                "img/sweatshirt_black_1_mitski.png",
+                "img/sweatshirt_black_2_mitski.png",
+                "img/sweatshirt_black_3_mitski.png"
+            ],
+            "price":45,
+            "reduction":0
+        },
+        {
+            "id":10,
+            "title":"Teba Bucket Hat",
+            "description":"Discover the black Teba bucket hat, an essential merch item for fans of our adorable cat. This fashionable headwear is carefully crafted from high-quality materials, offering optimal comfort and remarkable durability. Featuring delicate embroidery of our beloved Teba, this bucket hat is a true homage to their unique charm. Whether you wear it in the city or during outdoor outings, this bucket hat will provide you with style, elegance, and a touch of feline flair. Proudly display your love for your fav cat with this one-of-a-kind bucket hat, adding a touch of companionship and good vibes to your everyday look.\n\n",
+            "category":"Accessories",
+            "subcategory":"Bucket Hats",
+            "brand":"Teba",
+            "color":{
+                "name":"Black",
+                "category":"Black",
+                "code":"#000000"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/buckethat_black_teba.png",
+                "img/buckethat_black_2.png",
+                "img/buckethat_black_3.png"
+            ],
+            "price":25,
+            "reduction":30
+        },
+        {
+            "id":11,
+            "title":"Teba Bucket Hat",
+            "description":"Discover the lavender Teba bucket hat, an essential merch item for fans of our adorable cat. This fashionable headwear is carefully crafted from high-quality materials, offering optimal comfort and remarkable durability. Featuring delicate embroidery of our beloved Teba, this bucket hat is a true homage to their unique charm. Whether you wear it in the city or during outdoor outings, this bucket hat will provide you with style, elegance, and a touch of feline flair. Proudly display your love for fav cat with this one-of-a-kind bucket hat, adding a touch of companionship and good vibes to your everyday look.\n",
+            "category":"Accessories",
+            "subcategory":"Bucket Hats",
+            "brand":"Teba",
+            "color":{
+                "name":"Lavender",
+                "category":"Purple",
+                "code":"#d9d0e5"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/buckethat_purple_teba.png",
+                "img/buckethat_purple_2.png",
+                "img/buckethat_purple_3.png"
+            ],
+            "price":25,
+            "reduction":30
+        },
+        {
+            "id":12,
+            "title":"Mochi Bucket Hat",
+            "description":"Discover the black Mochi bucket hat, an essential merch item for fans of our adorable cat. This fashionable headwear is carefully crafted from high-quality materials, offering optimal comfort and remarkable durability. Featuring delicate embroidery of our beloved Mochi, this bucket hat is a true homage to their unique charm. Whether you wear it in the city or during outdoor outings, this bucket hat will provide you with style, elegance, and a touch of feline flair. Proudly display your love for your fav cat with this one-of-a-kind bucket hat, adding a touch of companionship and good vibes to your everyday look.\n\n",
+            "category":"Accessories",
+            "subcategory":"Bucket Hats",
+            "brand":"Mochi",
+            "color":{
+                "name":"Black",
+                "category":"Black",
+                "code":"#000000"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/buckethat_black_mochi.png",
+                "img/buckethat_black_2.png",
+                "img/buckethat_black_3.png"
+            ],
+            "price":25,
+            "reduction":30
+        },
+        {
+            "id":13,
+            "title":"Mochi Bucket Hat",
+            "description":"Discover the lavender Mochi bucket hat, an essential merch item for fans of our adorable cat. This fashionable headwear is carefully crafted from high-quality materials, offering optimal comfort and remarkable durability. Featuring delicate embroidery of our beloved Mochi, this bucket hat is a true homage to their unique charm. Whether you wear it in the city or during outdoor outings, this bucket hat will provide you with style, elegance, and a touch of feline flair. Proudly display your love for fav cat with this one-of-a-kind bucket hat, adding a touch of companionship and good vibes to your everyday look.\n",
+            "category":"Accessories",
+            "subcategory":"Bucket Hats",
+            "brand":"Mochi",
+            "color":{
+                "name":"Lavender",
+                "category":"Purple",
+                "code":"#d9d0e5"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/buckethat_purple_mochi.png",
+                "img/buckethat_purple_2.png",
+                "img/buckethat_purple_3.png"
+            ],
+            "price":25,
+            "reduction":30
+        },
+        {
+            "id":14,
+            "title":"Mitski Bucket Hat",
+            "description":"Discover the black Mitski bucket hat, an essential merch item for fans of our adorable cat. This fashionable headwear is carefully crafted from high-quality materials, offering optimal comfort and remarkable durability. Featuring delicate embroidery of our beloved Mitski, this bucket hat is a true homage to their unique charm. Whether you wear it in the city or during outdoor outings, this bucket hat will provide you with style, elegance, and a touch of feline flair. Proudly display your love for your fav cat with this one-of-a-kind bucket hat, adding a touch of companionship and good vibes to your everyday look.",
+            "category":"Accessories",
+            "subcategory":"Bucket Hats",
+            "brand":"Mitski",
+            "color":{
+                "name":"Black",
+                "category":"Black",
+                "code":"#000000"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/buckethat_black_mitski.png",
+                "img/buckethat_black_2.png",
+                "img/buckethat_black_3.png"
+            ],
+            "price":25,
+            "reduction":30
+        },
+        {
+            "id":15,
+            "title":"Mitski Bucket Hat",
+            "description":"Discover the lavender Mitski bucket hat, an essential merch item for fans of our adorable cat. This fashionable headwear is carefully crafted from high-quality materials, offering optimal comfort and remarkable durability. Featuring delicate embroidery of our beloved Mitski, this bucket hat is a true homage to their unique charm. Whether you wear it in the city or during outdoor outings, this bucket hat will provide you with style, elegance, and a touch of feline flair. Proudly display your love for fav cat with this one-of-a-kind bucket hat, adding a touch of companionship and good vibes to your everyday look.",
+            "category":"Accessories",
+            "subcategory":"Bucket Hats",
+            "brand":"Mitski",
+            "color":{
+                "name":"Lavender",
+                "category":"Purple",
+                "code":"#d9d0e5"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/buckethat_purple_mitski.png",
+                "img/buckethat_purple_2.png",
+                "img/buckethat_purple_3.png"
+            ],
+            "price":25,
+            "reduction":30
+        },
+        {
+            "id":16,
+            "title":"Miaou Baseball Cap",
+            "description":"Introducing our exquisitely embroidered Miaou Brand Cap, the epitome of feline fashion! Crafted with meticulous attention to detail, this cap combines luxurious style with superior comfort. The stunning embroidery showcases the iconic Miaou logo, making a bold statement for cat enthusiasts. Available in an array of captivating colors, this cap effortlessly elevates any ensemble. Whether you're strolling through the city or attending a cat-themed gathering, the Miaou Brand Cap is the ultimate choice. It features an adjustable strap for a perfect fit and a curved brim for sun protection. Complete your collection of cat-inspired merchandise with our extraordinary embroidered Miaou Brand Cap and indulge in the purr-fect blend of fashion and feline charm!",
+            "category":"Accessories",
+            "subcategory":"Baseball Caps",
+            "brand":"all",
+            "color":{
+                "name":"Light Blue",
+                "category":"Blue",
+                "code":"#8aaceb"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/cap_blue_1.png",
+                "img/cap_blue_2.png",
+                "img/cap_blue_3.png"
+            ],
+            "price":35,
+            "reduction":30
+        },
+        {
+            "id":17,
+            "title":"Miaou Baseball Cap",
+            "description":"Introducing our exquisitely embroidered Miaou Brand Cap, the epitome of feline fashion! Crafted with meticulous attention to detail, this cap combines luxurious style with superior comfort. The stunning embroidery showcases the iconic Miaou logo, making a bold statement for cat enthusiasts. Available in an array of captivating colors, this cap effortlessly elevates any ensemble. Whether you're strolling through the city or attending a cat-themed gathering, the Miaou Brand Cap is the ultimate choice. It features an adjustable strap for a perfect fit and a curved brim for sun protection. Complete your collection of cat-inspired merchandise with our extraordinary embroidered Miaou Brand Cap and indulge in the purr-fect blend of fashion and feline charm!",
+            "category":"Accessories",
+            "subcategory":"Baseball Caps",
+            "brand":"all",
+            "color":{
+                "name":"Black",
+                "category":"Black",
+                "code":"#171717"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/cap_black_1.png",
+                "img/cap_black_2.png",
+                "img/cap_black_3.png"
+            ],
+            "price":35,
+            "reduction":30
+        },
+        {
+            "id":18,
+            "title":"Miaou Baseball Cap",
+            "description":"Introducing our exquisitely embroidered Miaou Brand Cap, the epitome of feline fashion! Crafted with meticulous attention to detail, this cap combines luxurious style with superior comfort. The stunning embroidery showcases the iconic Miaou logo, making a bold statement for cat enthusiasts. Available in an array of captivating colors, this cap effortlessly elevates any ensemble. Whether you're strolling through the city or attending a cat-themed gathering, the Miaou Brand Cap is the ultimate choice. It features an adjustable strap for a perfect fit and a curved brim for sun protection. Complete your collection of cat-inspired merchandise with our extraordinary embroidered Miaou Brand Cap and indulge in the purr-fect blend of fashion and feline charm!",
+            "category":"Accessories",
+            "subcategory":"Baseball Caps",
+            "brand":"all",
+            "color":{
+                "name":"Red",
+                "category":"Red",
+                "code":"#b51f1f"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/cap_red_1.png",
+                "img/cap_red_2.png",
+                "img/cap_red_3.png"
+            ],
+            "price":35,
+            "reduction":30
+        },
+        {
+            "id":19,
+            "title":"Teba Stickers Set",
+            "description":"Decorate your belongings with our adorable Teba Stickers Set! This set includes a variety of vibrant stickers featuring charming illustrations of our beloved Teba. Made from high-quality vinyl, these stickers are durable and weather-resistant, ensuring long-lasting enjoyment. Add a touch of feline flair to your laptop, water bottle, notebook, or any other surface you desire. The stickers bring a pop of personality to your belongings and showcase your love for cats in a fun and playful way. Whether you're a collector or looking to enhance your personal items, our Stickers Set is a must-have for any Teba enthusiast. Start sticking and let your adoration shine!",
+            "category":"Others",
+            "subcategory":"Stickers",
+            "brand":"Teba",
+            "color":{
+                "name":"Multicolor",
+                "category":"Multicolor",
+                "code":"#000000"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/stickers_teba_1.png",
+                "img/stickers_teba_2.png",
+                "img/stickers_teba_3.png"
+            ],
+            "price":10,
+            "reduction":0
+        },
+        {
+            "id":20,
+            "title":"Mochi Stickers Set",
+            "description":"Decorate your belongings with our adorable Mochi Stickers Set! This set includes a variety of vibrant stickers featuring charming illustrations of our beloved Mochi. Made from high-quality vinyl, these stickers are durable and weather-resistant, ensuring long-lasting enjoyment. Add a touch of feline flair to your laptop, water bottle, notebook, or any other surface you desire. The stickers bring a pop of personality to your belongings and showcase your love for cats in a fun and playful way. Whether you're a collector or looking to enhance your personal items, our Stickers Set is a must-have for any Mochi enthusiast. Start sticking and let your adoration shine!\n",
+            "category":"Others",
+            "subcategory":"Stickers",
+            "brand":"Mochi",
+            "color":{
+                "name":"Multicolor",
+                "category":"Multicolor",
+                "code":"#000000"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/stickers_mochi_1.png",
+                "img/stickers_mochi_2.png",
+                "img/stickers_mochi_3.png"
+            ],
+            "price":10,
+            "reduction":0
+        },
+        {
+            "id":21,
+            "title":"Mitski Stickers Set",
+            "description":"Decorate your belongings with our adorable Mitski Stickers Set! This set includes a variety of vibrant stickers featuring charming illustrations of our beloved Mitski. Made from high-quality vinyl, these stickers are durable and weather-resistant, ensuring long-lasting enjoyment. Add a touch of feline flair to your laptop, water bottle, notebook, or any other surface you desire. The stickers bring a pop of personality to your belongings and showcase your love for cats in a fun and playful way. Whether you're a collector or looking to enhance your personal items, our Stickers Set is a must-have for any Mitski enthusiast. Start sticking and let your adoration shine!\n",
+            "category":"Others",
+            "subcategory":"Stickers",
+            "brand":"Mitski",
+            "color":{
+                "name":"Multicolor",
+                "category":"Multicolor",
+                "code":"#000000"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/stickers_mitski_1.png",
+                "img/stickers_mitski_2.png",
+                "img/stickers_mitski_3.png"
+            ],
+            "price":10,
+            "reduction":0
+        },
+        {
+            "id":22,
+            "title":"Teba Mug",
+            "description":"Start your day off right with our charming Teba Mug! Made from high-quality ceramic, this mug is both durable and microwave-safe. Featuring an adorable Teba design, it's the purr-fect way to showcase your love for the beloved feline personality. Sip your favorite hot beverage while enjoying the delightful presence of your favorite cat in spirit. Let it add a touch of vibrancy to your morning routine, making each sip a joyous homage to your favorite feline idol. Whether you're a tea lover or a coffee connoisseur, our Mug is the ideal companion for cozy moments and a delightful addition to your fan merch collection. Start your day with a smile!",
+            "category":"Others",
+            "subcategory":"Mugs",
+            "brand":"Teba",
+            "color":{
+                "name":"White",
+                "category":"White",
+                "code":"#000000"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/mug_1_teba.png",
+                "img/mug_2_teba.png",
+                "img/mug_3_teba.png"
+            ],
+            "price":13,
+            "reduction":0
+        },
+        {
+            "id":23,
+            "title":"Mochi Mug",
+            "description":"Start your day off right with our charming Mochi Mug! Made from high-quality ceramic, this mug is both durable and microwave-safe. Featuring an adorable Mochi design, it's the purr-fect way to showcase your love for the beloved feline personality. Sip your favorite hot beverage while enjoying the delightful presence of your favorite cat in spirit. Let it add a touch of vibrancy to your morning routine, making each sip a joyous homage to your favorite feline idol. Whether you're a tea lover or a coffee connoisseur, our Mug is the ideal companion for cozy moments and a delightful addition to your fan merch collection. Start your day with a smile!\n",
+            "category":"Others",
+            "subcategory":"Mugs",
+            "brand":"Mochi",
+            "color":{
+                "name":"White",
+                "category":"White",
+                "code":"#000000"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/mug_1_mochi.png",
+                "img/mug_2_mochi.png",
+                "img/mug_3_mochi.png"
+            ],
+            "price":13,
+            "reduction":0
+        },
+        {
+            "id":24,
+            "title":"Mitski Mug",
+            "description":"Start your day off right with our charming Mitski Mug! Made from high-quality ceramic, this mug is both durable and microwave-safe. Featuring an adorable Mitski design, it's the purr-fect way to showcase your love for the beloved feline personality. Sip your favorite hot beverage while enjoying the delightful presence of your favorite cat in spirit. Let it add a touch of vibrancy to your morning routine, making each sip a joyous homage to your favorite feline idol. Whether you're a tea lover or a coffee connoisseur, our Mug is the ideal companion for cozy moments and a delightful addition to your fan merch collection. Start your day with a smile!",
+            "category":"Others",
+            "subcategory":"Mugs",
+            "brand":"Mitski",
+            "color":{
+                "name":"White",
+                "category":"White",
+                "code":"#000000"
+            },
+            "sizes":{
+                "One Size":true
+            },
+            "images":[
+                "img/mug_1_mitski.png",
+                "img/mug_2_mitski.png",
+                "img/mug_3_mitski.png"
+            ],
+            "price":13,
+            "reduction":0
         }
-    ], 
-    "categories": [
+    ],
+    "categories":[
         {
             "id":0,
             "name":"Clothes",
-            "subcategories": [
+            "subcategories":[
                 {
-                    "id": 0,
-                    "name": "T-shirts"
+                    "id":0,
+                    "name":"T-shirts"
                 },
-                {   "id": 1,
-                    "name": "Sweatshirts"    
+                {
+                    "id":1,
+                    "name":"Sweatshirts"
                 }
             ]
         },
@@ -207,20 +635,28 @@
             "id":1,
             "name":"Accessories",
             "subcategories":[
-                {"id": 0,
-                "name": "Bucket Hats"},
-                {"id":1,
-                "name": "Caps"}
+                {
+                    "id":0,
+                    "name":"Bucket Hats"
+                },
+                {
+                    "id":1,
+                    "name":"Baseball Caps"
+                }
             ]
         },
         {
-            "id": 2,
+            "id":2,
             "name":"Others",
             "subcategories":[
-                {"id":0,
-                "name":"Stickers"},
-                {"id":1,
-                "name":"Mugs"}
+                {
+                    "id":0,
+                    "name":"Stickers"
+                },
+                {
+                    "id":1,
+                    "name":"Mugs"
+                }
             ]
         }
     ]

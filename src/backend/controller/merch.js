@@ -1,4 +1,6 @@
 const data = require("../data.json")
+
+// Retrieves all the items.
 exports.getAllItems = (req, res) => {
     const items = data.items;
     if (!items) {
@@ -13,6 +15,7 @@ exports.getAllItems = (req, res) => {
     })
 }
 
+// Retrieves an item by its ID.
 exports.getItemByID = (req, res) => {
     const id = parseInt(req.params.id)
     const result = data.items.find(item => item.id == id)
@@ -30,6 +33,7 @@ exports.getItemByID = (req, res) => {
     })
 }
 
+// Retrieves all items from a category.
 exports.getItemsByCategoryName = (req, res) => {
     try {
         const id = parseInt(req.params.catID)
@@ -49,6 +53,8 @@ exports.getItemsByCategoryName = (req, res) => {
         return
     }
 }
+
+// Retrieves all items from a category and a subcategory.
 exports.getItemsBySubName = (req, res) => {
     try {
         const catID = parseInt(req.params.catID)
@@ -76,8 +82,8 @@ exports.getItemsBySubName = (req, res) => {
     }
 }
 
+// Retrieves all the data (items + categories).
 exports.getAllData = (req, res) => {
-    console.log(data)
     if (!data) {
         res.status(404).json(
             {
@@ -94,6 +100,7 @@ exports.getAllData = (req, res) => {
     })
 }
 
+// Retrieves all the categories and subcategories in the data.
 exports.getAllCategories = (req, res) => {
     const categories = data.categories
     if (!categories) {
@@ -112,9 +119,16 @@ exports.getAllCategories = (req, res) => {
     })
 }
 
-exports.getItemsByVariant = (req, res) => {
-    const slug = req.params.slug.toLowerCase()
-    const result = data.items.filter(item => item.slug.toLowerCase() == slug)
+// Retrieves all present colors and sizes in the data.
+exports.getAllSizes = (req, res) => {
+    let result = [] 
+    data.items.forEach(element => {
+        Array.from(Object.keys(element.sizes)).forEach(size => {
+            if (!result.includes(size)) {
+                result.push(size)
+            }
+        })
+    })
     if (!result) {
         res.status(404).json(
             {"title": "An error occurred",
@@ -125,6 +139,26 @@ exports.getItemsByVariant = (req, res) => {
     }
     res.status(200).json({
         message: "All items found successfully",
-        items: result
+        sizes: result
+    })
+}
+exports.getAllColors = (req, res) => {
+    let result = [] 
+    data.items.forEach(element => {
+        if (!result.includes(element.color.category)) {
+            result.push(element.color.category)
+        }
+    })
+    if (!result) {
+        res.status(404).json(
+            {"title": "An error occurred",
+                "status": 404,
+                "message": "Items not found."}
+        )
+        return
+    }
+    res.status(200).json({
+        message: "All items found successfully",
+        sizes: result
     })
 }

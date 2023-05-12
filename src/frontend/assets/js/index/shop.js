@@ -1,5 +1,3 @@
-//! MAIN PAGE SCRIPT: ARTICLES
-
 // Retrieves the articles from a given API endpoint, apply filters if necessary
 // and launches the HTML generating functions.
 function getArticles(endpoint = "", filters = {}) {
@@ -8,7 +6,6 @@ function getArticles(endpoint = "", filters = {}) {
         .then(response => {
             // VIDE?
             if (!response || !response.items) {
-                return
             } else if (!Object.keys(filters).length) {
                 generateArticles(response.items)
             } else {
@@ -26,45 +23,53 @@ function generateArticles(items) {
     if (!container) {
         return
     }
+    
     container.innerHTML = "";
-    if (items) {
+    if (items.length) {
         items.forEach(item => generateBaseItem(item, container))
+        container.classList.remove("empty")
     } else {
-        console.log("no items to show ?")
+        container.classList.add("empty")
+        container.innerHTML = `<div class="no-result">There's nothing to show !</div>`;
     }
 
 }
 
 // Sub-function to `generateArticles`, generating the HTML code for a single article block.
 function generateBaseItem(item, container) {
+    
     let itemDiv = document.createElement("div")
     itemDiv.classList.add("article-item");
     itemDiv.innerHTML = `
     <div class="article-img">
-        <img class="first" src="${URL}${item.images[0]}">
-        <img class="second" src="${URL}${item.images[1]}">
+        <a href="article.html?articleID=${item.id}"><img class="first" src="${URL}${item.images[0]}">
+        <img class="second" src="${URL}${item.images[1]}"></a>
         <div class="quick-cart">
             <div class="choose-size">Choose your size:</div>
             <div class="sizes-container"></div>
         </div>
         ${item.reduction ? '<div class="reduction">-'+item.reduction+'%</div>' : ''}
     </div>
+    <a href="article.html?articleID=${item.id}">
     <div class="article-info">
+        
         <div class="article-brand">${item.brand}</div>
         <div class="article-name">${item.title} - ${item.color.name}</div>
         <div class="price-see-more">
             <div class="price">${generatePrice(item)}</div>
-            <a href="article.html?articleID=${item.id}" target="_blank" class="see-more">See more >></a>
+            <span class="see-more">See more >></span>
         </div>
-
-    </div>`
+        
+    </div>
+    </a>`
     container.appendChild(itemDiv)
-    generateQuickCart(item, itemDiv)
+    generateQuickAdd(item, itemDiv)
 }
 getArticles()
 
-
+// Updates the items based on the current category and subcategory.
 function updateItems(catID = -1, subcatID = -1, filters = []) {
+    
     if (catID < 0) {
         getArticles("", filters)
     } else if (subcatID < 0) {
@@ -74,4 +79,23 @@ function updateItems(catID = -1, subcatID = -1, filters = []) {
     }
 }
 
-//! MAIN PAGE SCRIPT: FILTERS
+// Generates the option to quick add the item to the cart on the main page.
+function generateQuickAdd(item, container) {
+    if (!container.querySelector(".sizes-container")) {
+        return
+    }
+    Array.from(Object.keys(item.sizes)).forEach(size => {
+        div = document.createElement("div");
+        div.innerHTML = size
+        if (item.sizes[size]) {
+            div.classList.add("size", "available");
+            div.addEventListener("click", function () {
+                addToCart(item, size)
+            })
+            
+        } else {
+            div.classList.add("size", "not-available");
+        }
+        container.querySelector(".sizes-container").appendChild(div)
+    })
+}

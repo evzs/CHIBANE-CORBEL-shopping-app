@@ -1,9 +1,10 @@
-// *ELEMENTS COMMUNS AUX DEUX PAGES
+// ?GLOBAL VARIABLES
 
 let cart = []
 const URL = "http://localhost:5501/"
 
 // ?LOCAL STORAGE
+
 function retrieveFromLocal() {
     if (localStorage.getItem("cart") === null) {
         return false
@@ -14,9 +15,25 @@ function retrieveFromLocal() {
 function saveToLocal() {
     localStorage.setItem("cart", JSON.stringify(cart))
 }
+
 retrieveFromLocal()
 
+// ?CART DROPDOWN
+
+// Listener for the cart dropdown.
+document.querySelector(".nav-link.cart").addEventListener("click", function() {
+    document.querySelector("aside").classList.toggle("visible")
+})
+
+// Removes the visible attribute when resizing over the max size of 
+// the burger menu.
+window.addEventListener("resize", function() {
+    document.querySelector("aside").classList.remove("visible")
+})
+
 // ?UTILITARY FUNCTIONS
+
+// Cosmetic function adding 0s to a price (2€ = 2,00€)
 function addZeros(number) {
     number = Number(number)
     if (isNaN(number)) {
@@ -44,32 +61,12 @@ function generatePrice(item) {
 }
 
 //? CART
-function generateQuickCart(item, container) {
-    if (!container.querySelector(".sizes-container")) {
-        console.warn("no parent div?")
-    }
-    Array.from(Object.keys(item.sizes)).forEach(size => {
-        div = document.createElement("div");
-        div.innerHTML = size
-        if (item.sizes[size]) {
-            div.classList.add("size", "available");
-            div.addEventListener("click", function () {
-                addToCart(item, size)
-            })
-            
-        } else {
-            div.classList.add("size", "not-available");
-        }
-        container.querySelector(".sizes-container").appendChild(div)
-    })
-}
-
 function addToCart(item, size, quantity = 1) {
     let existing = cart.find(i => i.item_id == item.id && i.size == size)
     if (existing) {
         existing.quantity += quantity;
         let existingDiv = document.querySelector(`[dataid='${item.id}'][datasize='${size}']`)
-        updateCartItemDiv(existingDiv, existing)
+        updateCartItemInfo(existingDiv, existing)
     } else {
         let newItem = {
             item_id: item.id,
@@ -88,10 +85,10 @@ function addToCart(item, size, quantity = 1) {
         generateCartItem(newItem)
     }
     saveToLocal()
-    updateQuickCart()
+    updateCartInfo()
 }
 
-function addToExistingCart(item, quantity = 1) {
+function addToExistingItemInCart(item, quantity = 1) {
     item.quantity += quantity;
     saveToLocal()
 }
@@ -107,18 +104,22 @@ function removeFromCart(item, quantity = 1) {
     return false
 }
 
-function emptyCart() {
+// Adds function to "empty all" button in the cart.
+document.querySelector(".empty-btn").addEventListener("click", function () {
     cart = []
     saveToLocal()
-    updateQuickCart()    
-}
+    updateCartInfo()
+})
 
+// Load the entire cart with all its items.
 function reloadCart() {
     let parentdiv = document.querySelector("aside .cart-articles-ctn")
     parentdiv.innerHTML = ""
     cart.forEach(item => generateCartItem(item))
 }
 reloadCart()
+
+// Generates the HTML code for a single item of the cart.
 function generateCartItem(cartItem) {
     if (!cartItem) {
         return
@@ -133,7 +134,7 @@ function generateCartItem(cartItem) {
             <div class="left"><img src="${URL}${cartItem.item_info.image}"></div>
             <div class="right">
                 <div class="cart-item-header">
-                <span class="cart-item-title">${cartItem.item_info.title}</span>
+                <span class="cart-item-title"><a target="blank_" href="article.html?articleID=${cartItem.item_id}">${cartItem.item_info.title}</span></a>
                 <div class="bin-logo"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
                 <div class="cart-item-price price">${generateCartItemPrice(cartItem)}</div>
@@ -152,74 +153,79 @@ function generateCartItem(cartItem) {
         </div>`
         container.querySelector(".bin-logo").addEventListener("click", function () {
             removeFromCart(cartItem, -1)
-            updateCartItemDiv(container, cartItem)
+            updateCartItemInfo(container, cartItem)
         })
         container.querySelector(".remove-item").addEventListener("click", function () {
             removeFromCart(cartItem)
-            updateCartItemDiv(container, cartItem)
+            updateCartItemInfo(container, cartItem)
         })
         container.querySelector(".add-item").addEventListener("click", function () {
-            addToExistingCart(cartItem, 1)
-            updateCartItemDiv(container, cartItem)
+            addToExistingItemInCart(cartItem, 1)
+            updateCartItemInfo(container, cartItem)
         })
     parentdiv.appendChild(container);
 }
 
-function updateCartItemDiv(container, item) {
-    if (!container) {
-        return;
-    }
-    if (!item.quantity) {
-        container.remove();
-        updateQuickCart()
-        return;
-    }
-    container.querySelector(".qty").innerHTML = item.quantity;
-
-    updateQuickCart()
-}
-
-function updateQuickCart() {
-    let container = document.querySelector("aside .cart-articles-ctn")
-    if (cart.length == 0) {
-        container.innerHTML = `
-        <div class="empty">Le panier est vide !</div>`
-    }
-    updateCartPrice()
-}
-updateQuickCart()
-
-document.querySelector(".nav-link.cart").addEventListener("click", function() {
-    document.querySelector("aside").classList.toggle("visible")
-})
-
-// Removes the visible attribute when resizing over the max size of 
-// the burger menu.
-window.addEventListener("resize", function() {
-    document.querySelector("aside").classList.remove("visible")
-})
-
-
-function updateCartPrice() {
-    let fullPrice = 0;
-    let loweredPrice = 0;
-    cart.forEach(item => {
-        if (item.quantity < 0) {
-            return
-        }
-        fullPrice += item.quantity * item.item_info.price
-        loweredPrice += item.quantity * (item.item_info.price - (item.item_info.price * item.item_info.reduction / 100))
-    })
-
-    document.querySelector(".total").innerHTML = 
-        fullPrice != loweredPrice ?
-            `<span class="new">${addZeros(loweredPrice)}€</span><span class="former">${addZeros(fullPrice)}€</span>`
-            : `${addZeros(fullPrice)}€`
-}
-
+// Generates the HTML for a single cart item price.
 function generateCartItemPrice(cartItem) {
     let loweredPrice = cartItem.item_info.price - (cartItem.item_info.price * cartItem.item_info.reduction / 100)
     return loweredPrice != cartItem.item_info.price ? 
         `<span class="new">${addZeros(loweredPrice)}€</span><span class="former">${addZeros(cartItem.item_info.price)}€</span>`
         : `${addZeros(cartItem.item_info.price)}€`
 }
+
+// Updates the HTML code of an item in cart to match its 
+// current quantity.
+function updateCartItemInfo(container, item) {
+    if (!container) {
+        return;
+    }
+    if (!item.quantity) {
+        container.remove();
+        updateCartInfo()
+        return;
+    }
+    container.querySelector(".qty").innerHTML = item.quantity;
+    updateCartInfo()
+}
+
+// Updates the cart total price, displays a placeholder text 
+// if the cart is empty.
+function updateCartInfo() {
+    let container = document.querySelector("aside .cart-articles-ctn")
+    if (cart.length == 0) {
+        container.innerHTML = `
+        <div class="empty">Your shopping bag is empty !</div>`
+        document.querySelector(".empty-cart").style.display = "none";
+    } else {
+        document.querySelector(".empty-cart").style.display = "flex";
+    }
+    updateCartPrice()
+}
+updateCartInfo()
+
+// Updates the total price of the cart and the count tag right beside
+// the cart icon.
+function updateCartPrice() {
+    let fullPrice = 0;
+    let loweredPrice = 0;
+    let qty = 0
+    cart.forEach(item => {
+        if (item.quantity < 0) {
+            return
+        }
+        fullPrice += item.quantity * item.item_info.price
+        loweredPrice += item.quantity * (item.item_info.price - (item.item_info.price * item.item_info.reduction / 100))
+        qty += item.quantity
+    })
+
+    document.querySelector(".total").innerHTML = 
+        fullPrice != loweredPrice ?
+            `<span class="new">${addZeros(loweredPrice)}€</span><span class="former">${addZeros(fullPrice)}€</span>`
+            : `${addZeros(fullPrice)}€`
+    document.querySelector(".count").innerHTML = qty
+    qty > 0 ?
+        document.querySelector(".item-count").classList.add("visible") :
+        document.querySelector(".item-count").classList.remove("visible")
+}
+

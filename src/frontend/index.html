@@ -11,32 +11,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <title>Home | Boutique JS</title>
+    <title>Home | Miaou Shop</title>
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-left"></div>
-            <div class="nav-center main-logo"><a><i class="fa-solid fa-paw"></i> MIAOU SHOP <i class="fa-solid fa-paw"></i></a></div>
+            <div class="nav-center main-logo"><a href="index.html"><i class="fa-solid fa-paw"></i> MIAOU SHOP <i class="fa-solid fa-paw"></i></a></div>
             <div class="nav-right nav-links">
                 <div class="nav-link account"><i class="fa-regular fa-user"></i></div>
                 <div class="nav-link wishlist"><i class="fa-regular fa-heart"></i></div>
-                <div class="nav-link cart"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="nav-link cart">
+                    <div class="item-count"><span class="count visible">0</span></div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
             </div>
         </nav>
     </header>
     <aside class="cart-ctn">
+        <div class="empty-cart"><span class="empty-btn">Empty the shopping bag</span></div>
         <div class="cart-articles-ctn"></div>
         <div class="cart-total">
                 <span class="title">Total:</span>
                 <span class="total">0,00€</span>
 
         </div>
-        <div class="purchase-btn">Passer la commande</div>
+        <div class="purchase-btn">Continue to checkout</div>
     </aside>
     <main>
         <section class="intro">
-            <div>Bonjour</div>
+  <img src="../backend/img/banner.png">
         </section>
         <section class="shop-ctn">
             <div class="shop-header">
@@ -48,7 +52,7 @@
                     <div class="cat-title show-all selected">Show all articles</div>
                 </div>
                 <div class="shop-content-right">
-                    <section class="section-search">
+                    <div class="section-search">
                         <div class="filters-bar">
                             <form method="post" id="filters-form">
                                 <div class="filters">
@@ -65,12 +69,37 @@
                                         <div class="filter-options-container">
                                             <label for="color-1">
                                                 <div class="filter-option">
-                                                    <input type="checkbox" id="color-1" name="color" value="purple"><span>Black</span>
+                                                    <input type="checkbox" id="color-1" name="color" value="Black"><span>Black</span>
                                                 </div>
                                             </label>
                                             <label for="color-2">
                                                 <div class="filter-option">
-                                                    <input type="checkbox" id="color-2" name="color" value="white"><span>White</span>
+                                                    <input type="checkbox" id="color-2" name="color" value="Blue"><span>Blue</span>
+                                                </div>
+                                            </label>
+                                            <label for="color-3">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="color-3" name="color" value="Purple"><span>Purple</span>
+                                                </div>
+                                            </label>
+                                            <label for="color-4">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="color-4" name="color" value="White"><span>White</span>
+                                                </div>
+                                            </label>
+                                            <label for="color-5">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="color-5" name="color" value="Red"><span>Red</span>
+                                                </div>
+                                            </label>
+                                            <label for="color-6">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="color-6" name="color" value="Multicolor"><span>Multicolor</span>
+                                                </div>
+                                            </label>
+                                            <label for="color-7">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="color-7" name="color" value="White"><span>White</span>
                                                 </div>
                                             </label>
                                         </div>
@@ -97,6 +126,11 @@
                                                     <input type="checkbox" id="cat-3" name="brand" value="mochi"><span>Mochi</span>
                                                 </div>
                                             </label>
+                                            <label for="cat-4">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="cat-4" name="brand" value="all"><span>Others</span>
+                                                </div>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="filter-container">
@@ -113,12 +147,32 @@
                                             </label>
                                             <label for="size-2">
                                                 <div class="filter-option">
-                                                    <input type="checkbox" id="size-2" name="size" value="XXS"><span>XXS</span>
+                                                    <input type="checkbox" id="size-2" name="size" value="XS"><span>XS</span>
                                                 </div>
                                             </label>
                                             <label for="size-3">
                                                 <div class="filter-option">
-                                                    <input type="checkbox" id="size-3" name="size" value="XS"><span>XS</span>
+                                                    <input type="checkbox" id="size-3" name="size" value="S"><span>S</span>
+                                                </div>
+                                            </label>
+                                            <label for="size-4">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="size-4" name="size" value="M"><span>M</span>
+                                                </div>
+                                            </label>
+                                            <label for="size-5">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="size-5" name="size" value="L"><span>L</span>
+                                                </div>
+                                            </label>
+                                            <label for="size-6">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="size-6" name="size" value="XL"><span>XL</span>
+                                                </div>
+                                            </label>
+                                            <label for="size-7">
+                                                <div class="filter-option">
+                                                    <input type="checkbox" id="size-7" name="size" value="XXL"><span>XXL</span>
                                                 </div>
                                             </label>
                                         </div>
@@ -175,10 +229,10 @@
                 <i class="fa-brands fa-twitter"></i>
             </div>
             <div class="footer-links">
-                <div class="footer-link">Conditions générales de vente</div>
-                <div class="footer-link">Mentions légales</div>
-                <div class="footer-link">Livraisons et retours</div>
-                <div class="footer-link">Contacts</div>
+                <div class="footer-link">General terms and conditions</div>
+                <div class="footer-link">legal notices</div>
+                <div class="footer-link">Delivery and returns</div>
+                <div class="footer-link">contact us</div>
             </div>
             <div class="copyright">© 2023 - <a href="https://github.com/evzs/">Eva Chibane</a> & <a href="https://github.com/RathGate/">Marianne Corbel</a></div>
         </div>

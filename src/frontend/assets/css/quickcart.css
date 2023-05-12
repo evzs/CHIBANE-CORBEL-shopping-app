@@ -24,20 +24,43 @@
     font-size: 16px;
     gap: 5px;
 }
+
 .size.available {
     opacity: .8;
     transition: opacity .2s ease, color .2s ease;
     cursor: pointer;
     padding: 5px 3px;
 }
+
 .size.not-available {
     opacity: .4;
     padding: 5px;
     cursor: default;
 }
+
 .size.available:hover {
     opacity: 1;
     color: rgb(214, 0, 28);
+}
+
+.empty-cart {
+    opacity: .7;
+    font-size: 14px;
+    position: relative;
+    top: -5px;
+    width: 100%;
+    display: none;
+    justify-content: flex-end;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.empty-btn {
+    cursor: pointer;
+}
+aside:hover .empty-cart {
+    opacity: 1;
 }
 
 aside {
@@ -61,11 +84,13 @@ aside {
 aside.visible {
     transform: translateY(100%);
 }
+
 .total {
     display: flex;
     gap: 5px;
     align-items: baseline;
 }
+
 .cart-articles-ctn {
     display: flex;
     flex-direction: column;
@@ -93,6 +118,7 @@ aside.visible {
     cursor: pointer;
     flex-shrink: 0;
 }
+
 .purchase-btn::after {
     position: absolute;
     z-index: -1;
@@ -104,32 +130,39 @@ aside.visible {
     right: 100%;
     transition: right .4s ease;
 }
+
 .purchase-btn:hover::after {
     right: 0;
 }
+
 .purchase-btn:hover {
     color: #ececec;
 }
+
 .cart-article-item {
     display: flex;
     width: 100%;
 }
+
 .cart-article-item .left {
     width: 30%;
     aspect-ratio: 0.9;
     overflow: hidden;
     flex-shrink: 0;
 }
+
 .cart-article-item img {
     height: 100%;
     width: 100%;
     object-position: 50% 50%;
     object-fit: cover;
 }
+
 .cart-article-item .right {
     padding: 10px;
     width: 70%;
 }
+
 .cart-item-header {
     text-transform: uppercase;
     font-size: 13px;
@@ -141,9 +174,11 @@ aside.visible {
     width: 100%;
     align-items: center;
 }
+
 .cart-item-title {
     flex: 1;
 }
+
 .cart-item-header .bin-logo {
     flex-shrink: 0;
     font-size: 16px !important;
@@ -151,15 +186,19 @@ aside.visible {
     opacity: 0;
     cursor: pointer;
 }
+
 .cart-article-item:hover .bin-logo {
     opacity: 1;
 }
+
 .bin-logo:hover {
     color: rgb(214, 0, 28);
 }
+
 .cart-item-price {
     margin-bottom: 8px;
 }
+
 .cart-item-info {
     display: flex;
     flex-direction: column;
@@ -173,6 +212,7 @@ aside.visible {
     justify-content: space-between;
     margin-top: 5px;
 }
+
 .cart-item-quantity span {
     font-size: 14px;
 }
@@ -180,15 +220,18 @@ aside.visible {
 .qty-select {
     display: flex;
 }
+
 .add-item, .remove-item {
     font-size: 20px !important;
     opacity: .8;
     transition: opacity .2s ease;
     cursor: pointer;
 }
+
 .add-item:hover, .remove-item:hover {
     opacity: 1;
 }
+
 .qty {
     min-width: 20px;
     display: flex;
@@ -208,6 +251,7 @@ aside.visible {
     font-size: 18px;
     position: relative;
 }
+
 .cart-total::before {
     position: absolute;
     content: '';
