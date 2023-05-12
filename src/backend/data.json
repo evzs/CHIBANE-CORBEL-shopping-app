@@ -562,9 +562,9 @@
                 "One Size":true
             },
             "images":[
-                "img/mug_1_teba.jpg",
-                "img/mug_2_teba.jpg",
-                "img/mug_3_teba.jpg"
+                "img/mug_1_teba.png",
+                "img/mug_2_teba.png",
+                "img/mug_3_teba.png"
             ],
             "price":13,
             "reduction":0
@@ -585,9 +585,9 @@
                 "One Size":true
             },
             "images":[
-                "img/mug_1_mochi.jpg",
-                "img/mug_2_mochi.jpg",
-                "img/mug_3_mochi.jpg"
+                "img/mug_1_mochi.png",
+                "img/mug_2_mochi.png",
+                "img/mug_3_mochi.png"
             ],
             "price":13,
             "reduction":0
@@ -608,9 +608,9 @@
                 "One Size":true
             },
             "images":[
-                "img/mug_1_mitski.jpg",
-                "img/mug_2_mitski.jpg",
-                "img/mug_3_mitski.jpg"
+                "img/mug_1_mitski.png",
+                "img/mug_2_mitski.png",
+                "img/mug_3_mitski.png"
             ],
             "price":13,
             "reduction":0
