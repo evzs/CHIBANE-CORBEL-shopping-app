@@ -107,11 +107,11 @@ function removeFromCart(item, quantity = 1) {
     return false
 }
 
-function emptyCart() {
+document.querySelector(".empty-btn").addEventListener("click", function () {
     cart = []
     saveToLocal()
-    updateQuickCart()    
-}
+    updateQuickCart()
+})
 
 function reloadCart() {
     let parentdiv = document.querySelector("aside .cart-articles-ctn")
@@ -184,6 +184,9 @@ function updateQuickCart() {
     if (cart.length == 0) {
         container.innerHTML = `
         <div class="empty">Le panier est vide !</div>`
+        document.querySelector(".empty-cart").style.display = "none";
+    } else {
+        document.querySelector(".empty-cart").style.display = "flex";
     }
     updateCartPrice()
 }

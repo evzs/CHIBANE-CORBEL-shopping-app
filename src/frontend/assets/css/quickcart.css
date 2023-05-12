@@ -40,6 +40,25 @@
     color: rgb(214, 0, 28);
 }
 
+.empty-cart {
+    opacity: .7;
+    font-size: 14px;
+    position: relative;
+    top: -5px;
+    width: 100%;
+    display: none;
+    justify-content: flex-end;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+.empty-btn {
+    cursor: pointer;
+}
+aside:hover .empty-cart {
+    opacity: 1;
+}
+
 aside {
     position: fixed;
     bottom: calc(100% - 58px);

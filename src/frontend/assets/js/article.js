@@ -170,14 +170,28 @@ function generateCartForm(item, parentdiv) {
         <div class="attr-item">
             <div class="title">SELECT A QUANTITY</div>
             <div class="quantity-ctn">
-                <div class="remove-item"><i class="fa-regular fa-square-minus"></i></div>
-                <div class="qty">1</div>
-                <div class="add-item"><i class="fa-regular fa-square-plus"></i></div>
+                <div class="art-remove-item"><i class="fa-regular fa-square-minus"></i></div>
+                <div class="item-qty qty">1</div>
+                <div class="art-add-item"><i class="fa-regular fa-square-plus"></i></div>
             </div>
         </div>
     </div>
     <div class="purchase-btn add-to-cart">Add to cart</div>
     `
+    parentdiv.querySelector(".art-add-item").addEventListener("click", function () {
+        updateSelectedQuantity(1)
+    })
+    parentdiv.querySelector(".art-remove-item").addEventListener("click", function () {
+        updateSelectedQuantity(-1)
+    })
+    parentdiv.querySelector(".add-to-cart").addEventListener("click", function () {
+        let size = document.querySelector("input[name='size']:checked")?.value
+        if (!size || !item.sizes[size]) {
+            console.warn("doesnt exist ?")
+            return
+        }
+        addToCart(item, size, selectedQuantity)
+    })
 }
 
 
@@ -194,6 +208,14 @@ function generateArticleSizes(item) {
     })
     console.log(result)
     return result;
-    
 }
-        
+
+function updateSelectedQuantity(number) {
+    selectedQuantity += number
+    if (selectedQuantity > 10) {
+        selectedQuantity = 10
+    } else if (selectedQuantity <= 0) {
+        selectedQuantity = 1
+    }
+    document.querySelector(".item-qty").innerHTML = selectedQuantity
+}
