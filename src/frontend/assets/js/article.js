@@ -13,13 +13,6 @@ function truncateDescription(description, maxLength) {
     return description.slice(0, maxLength) + "...";
 }
 
-// function revealFullDescription(button) {
-//     const descriptionElement = button.parentNode.querySelector('.description');
-//     const fullDescription = descriptionElement.dataset.fullDescription;
-//     descriptionElement.textContent = fullDescription;
-//     button.style.display = 'none';
-// }
-
 function generateSizeOptions(sizes) {
     let optionsHTML = "";
     for (const size in sizes) {
@@ -97,27 +90,26 @@ function generateArticle(item) {
     return articleDiv;
 }
 
+
 function loadArticle(id) {
     fetch(URL + `item/${id}`)
         .then((response) => response.json())
         .then((response) => {
             if (!response || !response.item) {
-                document.querySelector("main").innerHTML = 404;
+                document.querySelector("main").innerHTML = `<div class="not-found">404 !</div>`;
                 return;
             }
             generateArticle(response.item);
         })
         .catch((error) => {
             console.log(`Error while fetching url: ${error}`);
-            document.querySelector("main").innerHTML = 404;
-        });
-    
+            document.querySelector("main").innerHTML = `<div class="not-found">404 !</div>`;
+        });   
 }
 if (!articleID) {
-    document.querySelector("main").innerHTML = 404;
+    document.querySelector("main").innerHTML = `<div class="not-found">404 !</div>`;
 } else {
     loadArticle(articleID);
-    console.log(articleImgCount)
 }
 
 function toggleDescription(item, length) {
@@ -198,7 +190,6 @@ function generateArticleSizes(item) {
             `<div class="size not-available">${size}</div>`
             
     })
-    console.log(result)
     return result;
 }
 
