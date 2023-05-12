@@ -286,9 +286,9 @@
                 "One Size":true
             },
             "images":[
-                "buckethat_black_teba.png",
-                "buckethat_black_2.png",
-                "buckethat_black_3.png"
+                "img/buckethat_black_teba.png",
+                "img/buckethat_black_2.png",
+                "img/buckethat_black_3.png"
             ],
             "price":25,
             "reduction":0
@@ -309,9 +309,9 @@
                 "One Size":true
             },
             "images":[
-                "buckethat_purple_teba.png",
-                "buckethat_purple_2.png",
-                "buckethat_purple_3.png"
+                "img/buckethat_purple_teba.png",
+                "img/buckethat_purple_2.png",
+                "img/buckethat_purple_3.png"
             ],
             "price":25,
             "reduction":0
@@ -332,9 +332,9 @@
                 "One Size":true
             },
             "images":[
-                "buckethat_black_mochi.png",
-                "buckethat_black_2.png",
-                "buckethat_black_3.png"
+                "img/buckethat_black_mochi.png",
+                "img/buckethat_black_2.png",
+                "img/buckethat_black_3.png"
             ],
             "price":25,
             "reduction":0
@@ -355,9 +355,9 @@
                 "One Size":true
             },
             "images":[
-                "buckethat_purple_mochi.png",
-                "buckethat_purple_2.png",
-                "buckethat_purple_3.png"
+                "img/buckethat_purple_mochi.png",
+                "img/buckethat_purple_2.png",
+                "img/buckethat_purple_3.png"
             ],
             "price":25,
             "reduction":0
@@ -378,9 +378,9 @@
                 "One Size":true
             },
             "images":[
-                "buckethat_black_mitski.png",
-                "buckethat_black_2.png",
-                "buckethat_black_3.png"
+                "img/buckethat_black_mitski.png",
+                "img/buckethat_black_2.png",
+                "img/buckethat_black_3.png"
             ],
             "price":25,
             "reduction":0
@@ -401,9 +401,9 @@
                 "One Size":true
             },
             "images":[
-                "buckethat_purple_mitski.png",
-                "buckethat_purple_2.png",
-                "buckethat_purple_3.png"
+                "img/buckethat_purple_mitski.png",
+                "img/buckethat_purple_2.png",
+                "img/buckethat_purple_3.png"
             ],
             "price":25,
             "reduction":0
