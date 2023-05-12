@@ -41,16 +41,26 @@
     width: 50%;
     height: 100%;
     gap: 10px;
+    position: relative;
 }
 
 .swiper_thumbnail .swiper-wrapper {
     width: 100%;
 }
 
-div.article {
+section.article {
     display: flex;
     height: 100%;
-    padding: 50px;
+    padding: 50px 25px;
+    width: 100%;
+    max-width: 1250px !important;
+    margin: 0 auto;
+    gap: 50px;
+}
+section.article h1 {
+    font-size: 65px;
+    font-weight: 500;
+    margin-bottom: 0;
 }
 
 div.article-info {
@@ -58,21 +68,26 @@ div.article-info {
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    padding-top: 30px;
 }
 
 .sizes {
     display: flex;
     gap: 5px;
+    position: relative;
+    top: -5px;
 }
 
 .description {
     font-size: 16px;
     line-height: 1.5;
     font-weight: 500;
-    padding:  50px 50px;
+    padding:  25px 30px;
     display: flex;
     border: 2px solid #e0e0e0;
     border-radius: 16px;
+    position: relative;
+    cursor: pointer;
 }
 
 button {
@@ -123,4 +138,127 @@ button {
 .color {
     font-size: 16px;
     font-weight: 500;
+}
+
+
+.code {
+    border: 1px solid #595959;
+    border-radius: 50%;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: -1px;
+}
+
+.article-color {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    top: -5px;
+    margin-bottom: 10px;
+}
+.article-color .color-name {
+    opacity: .9;
+}
+
+.description-decoration {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: #ececec;
+    padding: 0px 10px;
+    letter-spacing: 1px;
+    color: #595959;
+    font-size: 15px;
+}
+.display-decoration {
+    position: absolute;
+    bottom: -15px;
+    right: 20px;
+    background-color: #ececec;
+    padding: 0px 10px;
+    letter-spacing: 1px;
+    color: #595959;
+    font-size: 16px;
+    font-style: italic;
+    transition: color .2s ease;
+}
+.description:hover .display-decoration {
+    color: rgb(202, 52, 72);
+}
+
+.description .infos {
+    margin-top: 15px;
+}
+.description .info {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.description .title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.article-cart-ctn {
+    margin: 30px 0 50px;
+}
+
+.select-attr-ctn {
+    display: flex;
+    gap: 40px;
+}
+.attr-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.attr-item .title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: .8;
+}
+
+.quantity-ctn {
+    display: flex;
+    font-size: 25px;
+}
+.quantity-ctn .qty {
+    min-width: 40px;
+}
+.quantity-ctn i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.sizes-ctn {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    align-items: center;
+}
+.size-item {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+.sizes-ctn label {
+    cursor: pointer;
+}
+.sizes-ctn input:checked ~ label {
+    color: rgb(197, 38, 59) !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.add-to-cart {
+    margin-top: 20px !important;
+    max-width: 50%;
 }

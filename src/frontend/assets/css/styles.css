@@ -31,8 +31,11 @@ main {
 }
 section > div {
     width: 100%;
+}
+section:not(.intro) {
+    width: 100%;
     max-width: 1650px;
-    padding: 0 25px;
+    padding: 50px 25px;
     margin: 0 auto;
 }
 

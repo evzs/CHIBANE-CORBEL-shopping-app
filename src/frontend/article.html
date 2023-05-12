@@ -26,10 +26,23 @@
             <div class="nav-right nav-links">
                 <div class="nav-link account"><i class="fa-regular fa-user"></i></div>
                 <div class="nav-link wishlist"><i class="fa-regular fa-heart"></i></div>
-                <div class="nav-link cart"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="nav-link cart">
+                    <div class="item-count"><span class="count visible">0</span></div>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
             </div>
         </nav>
     </header>
+    <aside class="cart-ctn">
+        <div class="empty-cart"><span class="empty-btn">Vider le panier</span></div>
+        <div class="cart-articles-ctn"></div>
+        <div class="cart-total">
+            <span class="title">Total:</span>
+            <span class="total">0,00€</span>
+    
+        </div>
+        <div class="purchase-btn">Passer la commande</div>
+    </aside>
     <main>
     </main>
     <footer>
@@ -53,6 +66,7 @@
         </div>
     
     </footer>
+    <script src="assets/js/script.js"></script>
     <script src="assets/js/article.js"></script>
 </body>
 
