@@ -118,7 +118,6 @@ function itemHasColor(colors = [], item) {
     return colors.length == 0 || colors.includes(item.color.category)
 }
 function itemHasCat(brand = [], item) {
-    console.log(brand, item.brand)
     return brand.length == 0 || brand.includes(item.brand.toLowerCase())
 }
 function itemHasAvailableSize(sizes = [], item) {

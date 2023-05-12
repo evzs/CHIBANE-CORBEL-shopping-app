@@ -77,7 +77,6 @@ exports.getItemsBySubName = (req, res) => {
 }
 
 exports.getAllData = (req, res) => {
-    console.log(data)
     if (!data) {
         res.status(404).json(
             {

@@ -8,7 +8,7 @@ function getArticles(endpoint = "", filters = {}) {
         .then(response => {
             // VIDE?
             if (!response || !response.items) {
-                return
+                console.log(empty)
             } else if (!Object.keys(filters).length) {
                 generateArticles(response.items)
             } else {
@@ -24,13 +24,14 @@ function getArticles(endpoint = "", filters = {}) {
 function generateArticles(items) {
     let container = document.querySelector(".articles-ctn")
     if (!container) {
+        console.log("here")
         return
     }
     container.innerHTML = "";
     if (items) {
         items.forEach(item => generateBaseItem(item, container))
     } else {
-        console.log("no items to show ?")
+        console.log("rien")
     }
 
 }

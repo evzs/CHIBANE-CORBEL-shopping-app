@@ -17,17 +17,20 @@
 }
 
 body, html {
-    /* height: 100vh; */
+    height: 100vh;
     width: 100%;
     margin: 0;
     background-color: var(--color-fg);
     color: var(--color-bg);
     font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 main {
     /* min-height: 100%; */
     width: 100%;
     padding-top: 60px;
+    flex: 1;
 }
 section > div {
     width: 100%;
@@ -39,3 +42,19 @@ section:not(.intro) {
     margin: 0 auto;
 }
 
+.not-found {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.no-result {
+    width: 100%;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
