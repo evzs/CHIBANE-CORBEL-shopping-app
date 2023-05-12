@@ -133,7 +133,7 @@ function generateCartItem(cartItem) {
             <div class="left"><img src="${URL}${cartItem.item_info.image}"></div>
             <div class="right">
                 <div class="cart-item-header">
-                <span class="cart-item-title">${cartItem.item_info.title}</span>
+                <span class="cart-item-title"><a target="blank_" href="article.html?articleID=${cartItem.item_id}">${cartItem.item_info.title}</span></a>
                 <div class="bin-logo"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
                 <div class="cart-item-price price">${generateCartItemPrice(cartItem)}</div>

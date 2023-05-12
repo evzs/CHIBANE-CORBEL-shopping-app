@@ -41,23 +41,27 @@ function generateBaseItem(item, container) {
     itemDiv.classList.add("article-item");
     itemDiv.innerHTML = `
     <div class="article-img">
-        <img class="first" src="${URL}${item.images[0]}">
-        <img class="second" src="${URL}${item.images[1]}">
+        <a href="article.html?articleID=${item.id}"><img class="first" src="${URL}${item.images[0]}">
+        <img class="second" src="${URL}${item.images[1]}"></a>
         <div class="quick-cart">
             <div class="choose-size">Choose your size:</div>
             <div class="sizes-container"></div>
         </div>
         ${item.reduction ? '<div class="reduction">-'+item.reduction+'%</div>' : ''}
     </div>
+    <a href="article.html?articleID=${item.id}">
     <div class="article-info">
+        
         <div class="article-brand">${item.brand}</div>
         <div class="article-name">${item.title} - ${item.color.name}</div>
         <div class="price-see-more">
             <div class="price">${generatePrice(item)}</div>
-            <a href="article.html?articleID=${item.id}" class="see-more">See more >></a>
+            <span class="see-more">See more >></span>
         </div>
+        
+    </div>
+    </a>`
 
-    </div>`
     container.appendChild(itemDiv)
     generateQuickCart(item, itemDiv)
 }
