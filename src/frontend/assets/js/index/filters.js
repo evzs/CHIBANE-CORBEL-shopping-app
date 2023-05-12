@@ -1,4 +1,8 @@
+// ?GLOBAL VARIABLES
+
 let filters = document.querySelectorAll(".filter-container")
+
+// Generates the filters and the associated events.
 if (filters) {
     filters.forEach((filter, index) => {
         // Tracks the checkboxes
@@ -38,9 +42,9 @@ function countAllChecked(checkboxes) {
     return total
 }
 
+// Closes the filter dropdown if the user clicks outside of them.
 document.addEventListener("click", function (e) {
     let filters = document.querySelectorAll(".filter-options-container")
-    let quickCart = document.querySelector("aside")
     let $target = $(e.target)
 
     if ($target.parents(".filter-options-container").length > 0 
@@ -52,8 +56,8 @@ document.addEventListener("click", function (e) {
     removeClassFromAll(filters, "visible")
 })
 
+// Watches the changes in the filter, updates the items in consequence.
 let filtersInputs = document.querySelectorAll("input[type='checkbox'], input[type='radio']")
-
 if (filtersInputs) {
     filtersInputs.forEach(input => {
         input.addEventListener("change", function () {
@@ -62,11 +66,13 @@ if (filtersInputs) {
     })
 }
 
+// Removes all selected filters.
 function unsetFilters() {
     document.querySelectorAll("input[type='checkbox']").forEach(input => input.checked = false)
     document.querySelectorAll(".count .number").forEach(element => element.innerHTML = "all")
 }
 
+// Applies the filters to a selected array of items.
 function applyFilters(items = [], filters = {}) {
     if (!Object.keys(filters) || !items) {
         return items
@@ -97,7 +103,7 @@ function applyFilters(items = [], filters = {}) {
     return items
 }
 
-
+// Retrieves the filter from the HTML elements.
 function retrieveFilters() {
     let filters = {
         "filter-list": [],
@@ -114,6 +120,7 @@ function retrieveFilters() {
     return filters
 }
 
+// Shortcut functions for the filter check.
 function itemHasColor(colors = [], item) {
     return colors.length == 0 || colors.includes(item.color.category)
 }
@@ -127,4 +134,3 @@ function itemHasAvailableSize(sizes = [], item) {
         })
     )
 }
- // !END FILTERS
