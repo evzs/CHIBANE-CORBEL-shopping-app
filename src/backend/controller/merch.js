@@ -128,3 +128,47 @@ exports.getItemsByVariant = (req, res) => {
         items: result
     })
 }
+
+exports.getAllSizes = (req, res) => {
+    let result = [] 
+    data.items.forEach(element => {
+        Array.from(Object.keys(element.sizes)).forEach(size => {
+            if (!result.includes(size)) {
+                result.push(size)
+            }
+        })
+    })
+    if (!result) {
+        res.status(404).json(
+            {"title": "An error occurred",
+                "status": 404,
+                "message": "Items not found."}
+        )
+        return
+    }
+    res.status(200).json({
+        message: "All items found successfully",
+        sizes: result
+    })
+}
+
+exports.getAllColors = (req, res) => {
+    let result = [] 
+    data.items.forEach(element => {
+        if (!result.includes(element.color.category)) {
+            result.push(element.color.category)
+        }
+    })
+    if (!result) {
+        res.status(404).json(
+            {"title": "An error occurred",
+                "status": 404,
+                "message": "Items not found."}
+        )
+        return
+    }
+    res.status(200).json({
+        message: "All items found successfully",
+        sizes: result
+    })
+}

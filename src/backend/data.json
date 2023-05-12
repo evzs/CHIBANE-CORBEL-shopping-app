@@ -111,7 +111,7 @@
         {
             "id":4,
             "title":"Teba Sweatshirt",
-            "description":"Cozy up in style with our must-have Teba Sweatshirt, designed for all cat lovers! Crafted from premium, soft fabric, this sweatshirt ensures warmth and comfort during chilly days. Its adorable design proudly displays your affection for your favorite cat. Available in the pure white color, it adds a touch of personality to your wardrobe. Whether you're lounging at home or exploring the town, our Sweatshirt is the purr-fect choice for a casual yet fashionable look. With its relaxed fit and durable construction, this sweatshirt is perfect for everyday wear. Complete your fan merch collection and embrace your adoration for Teba today!",
+            "description":"Cozy up in style with our must-have Teba Sweatshirt, designed for all cat lovers! Crafted from premium, soft fabric, this sweatshirt ensures warmth and comfort during chilly days. Its adorable design proudly displays your affection for your favorite cat. Available in the pure White color, it adds a touch of personality to your wardrobe. Whether you're lounging at home or exploring the town, our Sweatshirt is the purr-fect choice for a casual yet fashionable look. With its relaxed fit and durable construction, this sweatshirt is perfect for everyday wear. Complete your fan merch collection and embrace your adoration for Teba today!",
             "category":"Clothes",
             "subcategory":"Sweatshirts",
             "brand":"Teba",
@@ -128,9 +128,9 @@
                 "XXL":true
             },
             "images":[
-                "img/sweatshirt_white_1_teba.png",
-                "img/sweatshirt_white_2_teba.png",
-                "img/sweatshirt_white_3_teba.png"
+                "img/sweatshirt_White_1_teba.png",
+                "img/sweatshirt_White_2_teba.png",
+                "img/sweatshirt_White_3_teba.png"
             ],
             "price":45,
             "reduction":0
@@ -485,8 +485,8 @@
             "subcategory":"Stickers",
             "brand":"Teba",
             "color":{
-                "name":"multi",
-                "category":"multi",
+                "name":"Multicolor",
+                "category":"Multicolor",
                 "code":"#000000"
             },
             "sizes":{
@@ -508,8 +508,8 @@
             "subcategory":"Stickers",
             "brand":"Mochi",
             "color":{
-                "name":"multi",
-                "category":"mutti",
+                "name":"Multicolor",
+                "category":"Multicolor",
                 "code":"#000000"
             },
             "sizes":{
@@ -531,8 +531,8 @@
             "subcategory":"Stickers",
             "brand":"Mitski",
             "color":{
-                "name":"multi",
-                "category":"multi",
+                "name":"Multicolor",
+                "category":"Multicolor",
                 "code":"#000000"
             },
             "sizes":{
@@ -554,8 +554,8 @@
             "subcategory":"Mugs",
             "brand":"Teba",
             "color":{
-                "name":"white",
-                "category":"white",
+                "name":"White",
+                "category":"White",
                 "code":"#000000"
             },
             "sizes":{
@@ -577,8 +577,8 @@
             "subcategory":"Mugs",
             "brand":"Mochi",
             "color":{
-                "name":"white",
-                "category":"white",
+                "name":"White",
+                "category":"White",
                 "code":"#000000"
             },
             "sizes":{
@@ -600,8 +600,8 @@
             "subcategory":"Mugs",
             "brand":"Mitski",
             "color":{
-                "name":"white",
-                "category":"white",
+                "name":"White",
+                "category":"White",
                 "code":"#000000"
             },
             "sizes":{

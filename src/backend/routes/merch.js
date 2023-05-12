@@ -10,4 +10,7 @@ router.get("/item/:id", controller.getItemByID)
 router.get("/items/category/:catID", controller.getItemsByCategoryName)
 router.get("/items/category/:catID/:subID", controller.getItemsBySubName)
 
+router.get("/filters/size", controller.getAllSizes)
+router.get("/filters/color", controller.getAllColors)
+
 module.exports = router

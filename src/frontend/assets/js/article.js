@@ -13,13 +13,6 @@ function truncateDescription(description, maxLength) {
     return description.slice(0, maxLength) + "...";
 }
 
-// function revealFullDescription(button) {
-//     const descriptionElement = button.parentNode.querySelector('.description');
-//     const fullDescription = descriptionElement.dataset.fullDescription;
-//     descriptionElement.textContent = fullDescription;
-//     button.style.display = 'none';
-// }
-
 function generateSizeOptions(sizes) {
     let optionsHTML = "";
     for (const size in sizes) {
@@ -110,8 +103,7 @@ function loadArticle(id) {
         .catch((error) => {
             console.log(`Error while fetching url: ${error}`);
             document.querySelector("main").innerHTML = 404;
-        });
-    
+        });   
 }
 if (!articleID) {
     document.querySelector("main").innerHTML = 404;
