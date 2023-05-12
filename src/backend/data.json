@@ -504,8 +504,7 @@
             },
             "images":[
                 "img/stickers_teba_1.png",
-                "img/stickers_teba_2.png",
-                "img/stickers_teba_3.png"
+                "img/stickers_teba_2.png"
             ],
             "price":10,
             "reduction":0
@@ -527,8 +526,7 @@
             },
             "images":[
                 "img/stickers_mochi_1.png",
-                "img/stickers_mochi_2.png",
-                "img/stickers_mochi_3.png"
+                "img/stickers_mochi_2.png"
             ],
             "price":10,
             "reduction":0
@@ -550,8 +548,7 @@
             },
             "images":[
                 "img/stickers_mitski_1.png",
-                "img/stickers_mitski_2.png",
-                "img/stickers_mitski_3.png"
+                "img/stickers_mitski_2.png"
             ],
             "price":10,
             "reduction":0
