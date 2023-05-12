@@ -1,34 +1,42 @@
+// ?RETRIEVE CURRENT ITEM ID
+
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 });
 
 let articleID = params.articleID;
+
+// ?GLOBAL VARIABLES
 let articleImgCount = 3;
 let selectedQuantity = 1;
 
-function truncateDescription(description, maxLength) {
-    if (description.length <= maxLength) {
-        return description;
-    }
-    return description.slice(0, maxLength) + "...";
+// ?CHECK IF ITEM EXISTS
+
+// Checks if the link is valid, checks if the article ID exists.
+function loadArticle(id) {
+    fetch(URL + `item/${id}`)
+        .then((response) => response.json())
+        .then((response) => {
+            if (!response || !response.item) {
+                document.querySelector("main").innerHTML = `<div class="not-found">404 !</div>`;
+                return;
+            }
+            generateArticle(response.item);
+        })
+        .catch((error) => {
+            console.log(`Error while fetching url: ${error}`);
+            document.querySelector("main").innerHTML = `<div class="not-found">404 !</div>`;
+        });   
+}
+if (!articleID) {
+    document.querySelector("main").innerHTML = `<div class="not-found">404 !</div>`;
+} else {
+    loadArticle(articleID);
 }
 
-function generateSizeOptions(sizes) {
-    let optionsHTML = "";
-    for (const size in sizes) {
-        optionsHTML += `<span class="size-option">${size}</span>`;
-    }
-    return optionsHTML;
-}
+// ?ARTICLE PAGE GENERATION
 
-function generateSwiperSlides(images) {
-    let slideHTML = "";
-    images.forEach((image, index) => {
-        slideHTML += `<div class="swiper-slide" data-index="${index}"><img src="${URL}${image}" alt="Image" class="main-image"></div>`;
-    });
-    return slideHTML;
-}
-
+// Main function to generate the article page.
 function generateArticle(item) {
     let articleDiv = document.createElement("section");
     articleDiv.className = "article";
@@ -86,32 +94,35 @@ function generateArticle(item) {
             swiper: swiper_thumbnail,
         },
     });
-
     return articleDiv;
 }
 
-
-function loadArticle(id) {
-    fetch(URL + `item/${id}`)
-        .then((response) => response.json())
-        .then((response) => {
-            if (!response || !response.item) {
-                document.querySelector("main").innerHTML = `<div class="not-found">404 !</div>`;
-                return;
-            }
-            generateArticle(response.item);
-        })
-        .catch((error) => {
-            console.log(`Error while fetching url: ${error}`);
-            document.querySelector("main").innerHTML = `<div class="not-found">404 !</div>`;
-        });   
-}
-if (!articleID) {
-    document.querySelector("main").innerHTML = `<div class="not-found">404 !</div>`;
-} else {
-    loadArticle(articleID);
+// Shortens the item description to a given length.
+function truncateDescription(description, maxLength) {
+    if (description.length <= maxLength) {
+        return description;
+    }
+    return description.slice(0, maxLength) + "...";
 }
 
+// Generates all existant sizes (not available but existant).
+function generateSizeOptions(sizes) {
+    let optionsHTML = "";
+    for (const size in sizes) {
+        optionsHTML += `<span class="size-option">${size}</span>`;
+    }
+    return optionsHTML;
+}
+
+function generateSwiperSlides(images) {
+    let slideHTML = "";
+    images.forEach((image, index) => {
+        slideHTML += `<div class="swiper-slide" data-index="${index}"><img src="${URL}${image}" alt="Image" class="main-image"></div>`;
+    });
+    return slideHTML;
+}
+
+// Button "show more"/"show less" for item description.
 function toggleDescription(item, length) {
     let descriptionDiv = document.querySelector(".description");
     let textDiv = descriptionDiv.querySelector(".description-text")
@@ -139,6 +150,7 @@ function toggleDescription(item, length) {
     }
 }
 
+// Generates the options to add the item to the cart.
 function generateCartForm(item, parentdiv) {
     if (!parentdiv || !item) {
         return
@@ -178,7 +190,7 @@ function generateCartForm(item, parentdiv) {
     })
 }
 
-
+// Generates the sizes options, clickable (to add to the cart).
 function generateArticleSizes(item) {
     let result = ``
     Array.from(Object.keys(item.sizes)).forEach(size => {
@@ -193,6 +205,7 @@ function generateArticleSizes(item) {
     return result;
 }
 
+// Updates the selected quantity, between 0 and 10.
 function updateSelectedQuantity(number) {
     selectedQuantity += number
     if (selectedQuantity > 10) {
