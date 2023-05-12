@@ -440,7 +440,7 @@ function generateCartItem(cartItem) {
                 <span class="cart-item-title">${cartItem.item_info.title}</span>
                 <div class="bin-logo"><i class="fa-solid fa-trash-can"></i></div>
                 </div>
-                <div class="cart-item-price">${cartItem.item_info.price}€</div>
+                <div class="cart-item-price price">${generateCartItemPrice(cartItem)}</div>
                 <div class="cart-item-info">
                     <span class="info-size"><span>Size: </span>${cartItem.size}</span>
                     <span class="info-size"><span>Color: </span>${cartItem.item_info.color}</span>
@@ -519,4 +519,12 @@ function updateCartPrice() {
         fullPrice != loweredPrice ?
             `<span class="new">${addZeros(loweredPrice)}€</span><span class="former">${addZeros(fullPrice)}€</span>`
             : `${addZeros(fullPrice)}€`
+}
+
+function generateCartItemPrice(cartItem) {
+    let loweredPrice = cartItem.item_info.price - (cartItem.item_info.price * cartItem.item_info.reduction / 100)
+    return loweredPrice != cartItem.item_info.price ? 
+        `<span class="new">${addZeros(loweredPrice)}€</span><span class="former">${addZeros(cartItem.item_info.price)}€</span>`
+        : `${addZeros(cartItem.item_info.price)}€`
+    
 }
