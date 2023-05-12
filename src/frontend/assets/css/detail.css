@@ -15,8 +15,11 @@
     cursor: pointer;
     height: auto;
     width: 200px;
+    min-height: 93px;
 }
-
+.swiper-slide-visible {
+    min-height: 450px;
+}
 .swiper_thumbnail .swiper-slide-thumb-active {
     border: #ff4267 solid 2px;
     border-radius: 16px;
