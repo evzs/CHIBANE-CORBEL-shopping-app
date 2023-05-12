@@ -3,6 +3,7 @@ section.shop-ctn {
     width: 100%;
     display: flex;
     flex-direction: column;
+    min-height: 70vh;
 }
 a {
     color: unset;
@@ -21,7 +22,7 @@ h1 {
     min-height: 100%;
     display: flex;
     width: 100%;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
 .cat-title, .subcat-title {
     padding: 5px;

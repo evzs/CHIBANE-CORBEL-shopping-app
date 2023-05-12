@@ -3,6 +3,7 @@
 @import url(articles.css);
 @import url(filters.css);
 @import url(quickcart.css);
+@import url(footer.css);
 
 * {
     margin: 0;

@@ -23,8 +23,10 @@ nav {
     align-items: center;
     gap: 5px;
 }
-.nav-center i {
-    font-size: 20px;
+.main-logo i {
+    font-size: .7em;
+    position: relative;
+    top: -3px;
 }
 .nav-right {
     font-size: 22px;
@@ -35,10 +37,10 @@ nav {
 .cart {
     cursor: pointer;
 }
-.logo {
+.main-logo {
     position: relative;
     top: 2px;
-    font-size: 30px;
+    font-size: 30px !important;
     font-family: 'Josefin Sans', sans-serif;
     cursor: pointer;
 }
