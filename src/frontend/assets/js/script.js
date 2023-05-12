@@ -183,7 +183,7 @@ function updateQuickCart() {
     let container = document.querySelector("aside .cart-articles-ctn")
     if (cart.length == 0) {
         container.innerHTML = `
-        <div class="empty">Le panier est vide !</div>`
+        <div class="empty">Your shopping bag is empty !</div>`
         document.querySelector(".empty-cart").style.display = "none";
     } else {
         document.querySelector(".empty-cart").style.display = "flex";

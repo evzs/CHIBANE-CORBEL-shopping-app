@@ -52,6 +52,7 @@ section:not(.intro) {
     height: 500px;
     width: auto;
     object-fit: cover;
+}
 
 .not-found {
     height: 100%;
@@ -68,3 +69,4 @@ section:not(.intro) {
     display: flex;
     justify-content: center;
     align-items: center;
+}
