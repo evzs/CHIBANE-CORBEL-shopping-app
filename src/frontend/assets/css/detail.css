@@ -17,9 +17,11 @@
     width: 200px;
     min-height: 93px;
 }
+
 .swiper-slide-visible {
     min-height: 450px;
 }
+
 .swiper_thumbnail .swiper-slide-thumb-active {
     border: #ff4267 solid 2px;
     border-radius: 16px;
@@ -161,6 +163,7 @@ button {
     top: -5px;
     margin-bottom: 10px;
 }
+
 .article-color .color-name {
     opacity: .9;
 }
@@ -175,6 +178,7 @@ button {
     color: #595959;
     font-size: 15px;
 }
+
 .display-decoration {
     position: absolute;
     bottom: -15px;
@@ -187,6 +191,7 @@ button {
     font-style: italic;
     transition: color .2s ease;
 }
+
 .description:hover .display-decoration {
     color: rgb(202, 52, 72);
 }
@@ -194,11 +199,13 @@ button {
 .description .infos {
     margin-top: 15px;
 }
+
 .description .info {
     display: flex;
     gap: 5px;
     align-items: center;
 }
+
 .description .title {
     font-weight: bold;
     font-size: 16px;
@@ -212,12 +219,14 @@ button {
     display: flex;
     gap: 40px;
 }
+
 .attr-item {
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
+
 .attr-item .title {
     font-size: 14px;
     letter-spacing: 1px;
@@ -228,9 +237,11 @@ button {
     display: flex;
     font-size: 25px;
 }
+
 .quantity-ctn .qty {
     min-width: 40px;
 }
+
 .quantity-ctn i {
     font-size: 30px;
     cursor: pointer;
@@ -242,6 +253,7 @@ button {
     font-size: 20px;
     align-items: center;
 }
+
 .size-item {
     height: 30px;
     display: flex;
@@ -249,12 +261,15 @@ button {
     padding: 5px;
     cursor: pointer;
 }
+
 .hidden {
     display: none;
 }
+
 .sizes-ctn label {
     cursor: pointer;
 }
+
 .sizes-ctn input:checked ~ label {
     color: rgb(197, 38, 59) !important;
     text-decoration: underline;

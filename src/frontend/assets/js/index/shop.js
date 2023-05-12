@@ -65,9 +65,8 @@ function generateBaseItem(item, container) {
         
     </div>
     </a>`
-
     container.appendChild(itemDiv)
-    generateQuickCart(item, itemDiv)
+    generateQuickAdd(item, itemDiv)
 }
 getArticles()
 
@@ -83,4 +82,22 @@ function updateItems(catID = -1, subcatID = -1, filters = []) {
     }
 }
 
-//! MAIN PAGE SCRIPT: FILTERS
+function generateQuickAdd(item, container) {
+    if (!container.querySelector(".sizes-container")) {
+        return
+    }
+    Array.from(Object.keys(item.sizes)).forEach(size => {
+        div = document.createElement("div");
+        div.innerHTML = size
+        if (item.sizes[size]) {
+            div.classList.add("size", "available");
+            div.addEventListener("click", function () {
+                addToCart(item, size)
+            })
+            
+        } else {
+            div.classList.add("size", "not-available");
+        }
+        container.querySelector(".sizes-container").appendChild(div)
+    })
+}

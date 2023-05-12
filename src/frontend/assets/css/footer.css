@@ -16,6 +16,7 @@ footer {
     justify-content: center;
     margin: 30px 0;
 }
+
 .footer-logo div {
     position: relative;
     top: 2px;
@@ -38,6 +39,7 @@ footer {
     flex-direction: column;
     gap: 30px;
 }
+
 .socials {
     display: flex;
     align-items: center;
@@ -45,15 +47,18 @@ footer {
     gap: 25px;
     cursor: pointer;
 }
+
 .socials i {
     font-size: 28px !important;
 }
+
 .footer-links {
     display: flex;
     gap: 15px;
     text-transform: uppercase;
     cursor: pointer;
 }
+
 .copyright {
     font-size: 14px;
     opacity: .7;

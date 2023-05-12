@@ -10,6 +10,7 @@
     width: 100%;
     margin: 0px 0 20px;
 }
+
 .filters-bar form {
     display: flex;
     width: 100%;
@@ -100,6 +101,7 @@
     padding: 5px;
     z-index: 6;
 }
+
 .sort .filter-options-container {
     left: auto;
     right: 0;
@@ -139,6 +141,7 @@
     position: relative;
     opacity: .6;
 }
+
 .filter-container input[type="radio"] {
     border-radius: 50%;
 }
@@ -153,6 +156,7 @@
     width: 60%;
     background: transparent;
 }
+
 .filter-container input[type="radio"]::before {
     border-radius: 50%;
 }
