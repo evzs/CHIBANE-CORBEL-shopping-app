@@ -16,7 +16,8 @@
                 "XS":true,
                 "S":true,
                 "M":true,
-                "XL":true,
+                "L":true,
+                "XL":false,
                 "XXL":true
             },
             "images":[
@@ -41,8 +42,9 @@
             },
             "sizes":{
                 "XS":true,
-                "S":true,
-                "M":true,
+                "S":false,
+                "M":false,
+                "L":true,
                 "XL":true,
                 "XXL":true
             },
@@ -70,6 +72,7 @@
                 "XS":true,
                 "S":true,
                 "M":true,
+                "L":true,
                 "XL":true,
                 "XXL":true
             },
@@ -97,6 +100,7 @@
                 "XS":true,
                 "S":true,
                 "M":true,
+                "L":false,
                 "XL":true,
                 "XXL":true
             },
@@ -121,9 +125,10 @@
                 "code":"#FFFFFF"
             },
             "sizes":{
-                "XS":true,
-                "S":true,
+                "XS":false,
+                "S":false,
                 "M":true,
+                "L":true,
                 "XL":true,
                 "XXL":true
             },
@@ -151,6 +156,7 @@
                 "XS":true,
                 "S":true,
                 "M":true,
+                "L":true,
                 "XL":true,
                 "XXL":true
             },
@@ -178,6 +184,7 @@
                 "XS":true,
                 "S":true,
                 "M":true,
+                "L":false,
                 "XL":true,
                 "XXL":true
             },
@@ -205,6 +212,7 @@
                 "XS":true,
                 "S":true,
                 "M":true,
+                "L":true,
                 "XL":true,
                 "XXL":true
             },
@@ -232,6 +240,7 @@
                 "XS":true,
                 "S":true,
                 "M":true,
+                "L":true,
                 "XL":true,
                 "XXL":true
             },
@@ -257,8 +266,9 @@
             },
             "sizes":{
                 "XS":true,
-                "S":true,
-                "M":true,
+                "S":false,
+                "M":false,
+                "L":true,
                 "XL":true,
                 "XXL":true
             },
@@ -329,7 +339,7 @@
                 "code":"#000000"
             },
             "sizes":{
-                "One Size":true
+                "One Size":false
             },
             "images":[
                 "img/buckethat_black_mochi.png",
@@ -490,7 +500,7 @@
                 "code":"#000000"
             },
             "sizes":{
-                "One Size":true
+                "One Size":false
             },
             "images":[
                 "img/stickers_teba_1.png",
@@ -559,7 +569,7 @@
                 "code":"#000000"
             },
             "sizes":{
-                "One Size":true
+                "One Size":false
             },
             "images":[
                 "img/mug_1_teba.png",
