@@ -20,7 +20,7 @@
                 "XXL": true
             },
             "images": [
-                "img/test/front.webp","img/test/back.webp"
+                "img/test/front.webp","img/test/back.webp", "img/test/person.png"
             ], 
             "price": 25,
             "reduction": 0
@@ -164,6 +164,27 @@
             "images": [
                 "img/test/front.webp","img/test/back.webp"
             ], 
+            "price": 15,
+            "reduction": 50
+        },
+        {
+            "id": 7,
+            "title": "Bob Mitski",
+            "description": "Découvrez le bob Mitski Cat, un article de merchandising incontournable pour les fans de notre adorable chat grincheux. Ce couvre-chef à la mode est fabriqué avec soin à partir de matériaux de haute qualité, offrant un confort optimal et une durabilité remarquable. Arborant une broderie délicate représentant notre chat Mitski avec son expression boudeuse caractéristique, ce bob est un véritable hommage à sa personnalité unique. Que vous le portiez en ville ou lors de vos sorties en plein air, le bob Mitski Cat vous procurera style, élégance et une touche d'humour. Affichez fièrement votre amour pour notre adorable chat avec ce bob unique en son genre,  ajoutant une note de complicité et de bonne humeur à votre look quotidien.",
+            "category": "Accessories",
+            "subcategory": "Bucket Hats",
+            "brand": "Mitski",
+            "color": {
+                "name": "Violet Pastel",
+                "category": "purple",
+                "code": "#b19cd9"
+            },
+            "sizes": {
+                "One Size": true
+            },
+            "images": [
+                "img/bob_violet_mitski.png","img/bob_violet_2.png", "img/bob_violet_3.png"
+            ],
             "price": 15,
             "reduction": 50
         }
