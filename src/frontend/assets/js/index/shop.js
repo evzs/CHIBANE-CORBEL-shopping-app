@@ -6,7 +6,6 @@ function getArticles(endpoint = "", filters = {}) {
     fetch(URL + `items/${endpoint}`)
         .then(response => response.json())
         .then(response => {
-            console.log("here")
             // VIDE?
             if (!response || !response.items) {
             } else if (!Object.keys(filters).length) {
@@ -25,7 +24,6 @@ function generateArticles(items) {
     
     let container = document.querySelector(".articles-ctn")
     if (!container) {
-        console.log("here")
         return
     }
     
