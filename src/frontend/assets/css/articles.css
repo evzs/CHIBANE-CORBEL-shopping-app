@@ -106,7 +106,7 @@ h1 {
     width: 100%;
     display: block;
     object-fit: cover;
-    border-radius: 32px;
+    /* border-radius: 32px; */
 }
 .article-img .first {
     opacity: 1;
@@ -128,7 +128,7 @@ h1 {
     height: 30px;
     width: 60px;
     z-index: 2;
-    border-radius: 16px;
+    /* border-radius: 16px; */
     color: var(--color-fg);
     background-color: rgb(214, 0, 28);
     display: flex;
@@ -146,13 +146,13 @@ h1 {
     align-items: baseline;
     gap: 5px;
 }
-.article-info {
+.article-item .article-info {
     display: flex;
     flex-direction: column;
     gap: 3px;
     padding: 10px 0;
 }
-.brand {
+.article-brand {
     text-transform: uppercase;
     font-size: 14px;
 }

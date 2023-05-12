@@ -167,8 +167,8 @@ function generateBaseItem(item, container) {
         ${item.reduction ? '<div class="reduction">-'+item.reduction+'%</div>' : ''}
     </div>
     <div class="article-info">
-        <div class="brand">${item.brand}</div>
-        <div class="name">${item.title} - ${item.color.category}</div>
+        <div class="article-brand">${item.brand}</div>
+        <div class="article-name">${item.title} - ${item.color.category}</div>
         <div class="price-see-more">
             ${generatePrice(item)}
             <a href="article.html?articleID=${item.id}" target="_blank" class="see-more">See more >></a>
