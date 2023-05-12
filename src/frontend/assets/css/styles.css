@@ -35,3 +35,15 @@ section > div {
     padding: 0 25px;
     margin: 0 auto;
 }
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro img {
+    height: 500px;
+    width: auto;
+    object-fit: cover;
+}
